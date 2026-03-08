@@ -21,3 +21,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+!.framework/
+!.framework/**
+!.github/
+!.github/**
+!.vscode/
+!.vscode/**
