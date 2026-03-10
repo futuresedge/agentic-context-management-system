@@ -13,19 +13,22 @@ The DLMS is the primary focus. The Astro app (`src/`) is a thin delivery layer; 
 ```
 dlms/                               # The DLMS framework — primary work area
   corpus/
-    policies/                       # Authored policy & reference documents
-    templates/                      # Document templates (TMPL-*)
+    corpus-index.md                 # Authoritative index of all 103 corpus documents, by tier
+    policies/                       # Policies, SLAs, taxonomy, reference documents
+    templates/                      # Document templates (TMPL-*) and artefact templates
+    dod-templates/                  # Definition of Done templates (one per lifecycle stage)
+    guides/                         # Procedures and onboarding guides (Wave 14)
   framework-principles.md           # 11 foundation principles — read this first
-  dlms-agent-roster.md              # Full agent architecture and tier design
+  dlms-agent-roster.md              # Full agent architecture and tier design (Tiers 1–14)
   context-engineering-approach.md   # Core philosophy: minimal scoped context
-  gap-register.md                   # Live inventory of all planned documents
-  dlms-file-creation-process.md     # Wave dependency ordering for document creation
+  gap-register.md                   # Corpus authoring history — all 103 docs drafted
+  dlms-file-creation-process.md     # Wave dependency ordering (historical reference)
 src/                                # Astro + React + TypeScript web app
   components/ui/                    # shadcn/ui components
   pages/
   layouts/
   styles/
-.github/agents/                     # Agent instruction files (being authored)
+.github/agents/                     # Agent instruction files (not yet authored)
 ```
 
 ---
@@ -94,10 +97,12 @@ Sections use `## UPPER_SNAKE_CASE` headings. These are machine-readable keys, no
 
 ## Authoring New Documents
 
+**Current corpus state:** All 14 waves are complete — 103 documents drafted (DLMS-2026-0001 through DLMS-2026-0103). The next available doc_id is `DLMS-2026-0104`.
+
 Before authoring any document:
-1. Check `dlms/gap-register.md` to confirm the target wave is unblocked
+1. Check `dlms/corpus/corpus-index.md` to confirm the doc_id is not already taken and to find the correct tier for the new document
 2. Use the assigned template for the document's `doc_type` (see Wave 2 templates)
-3. Assign the next sequential `doc_id` (check corpus directories to find the highest existing ID)
+3. Assign the next sequential `doc_id` — currently `DLMS-2026-0104` and incrementing
 4. Bootstrap documents (Wave 1) use `template_id: bootstrap`; all others reference their TMPL doc ID
 
 **Template IDs by doc_type:**
@@ -136,13 +141,12 @@ Critical rules go at the top of any instruction file. Boundaries go at the botto
 
 ---
 
-## Wave Ordering
+## Corpus Completion Status
 
-Documents are created in strict wave order — a document cannot be authored before its dependencies exist. Current status is in `dlms/gap-register.md`. The dependency chain:
+All 14 authoring waves are complete as of 2026-03-09. The wave dependency ordering is documented in `dlms/dlms-file-creation-process.md` for historical reference. All dependencies are now satisfied — new documents can reference any existing corpus doc without wave-blocking constraints.
 
-- Wave 1 (Bootstrap) → Wave 2 (Content Templates) → Wave 3 (Principles-Derived Policies) → Wave 4 (Technical Standards) → Wave 5 (Reference Documents) → Wave 6 (Foundational Artefact Templates) → ...
-
-Check the gap register before starting any new document. If a wave is not complete, its dependents cannot be correctly authored.
+The completed wave chain was:
+- Wave 1 (Bootstrap) → Wave 2 (Content Templates) → Wave 3 (Principles-Derived Policies) → Wave 4 (Technical Standards) → Wave 5 (Reference Documents) → Wave 6 (Foundational Artefact Templates) → Wave 7 (Operational Lifecycle Policies) → Wave 8 (Agent Behaviour Policies) → Wave 9 (Stage Artefact Templates) → Wave 10 (SLA Policies) → Wave 11 (Knowledge & Learning Policies) → Wave 12 (CI Artefact Templates) → Wave 13 (CI & SysAdmin Policies) → Wave 14 (Procedures & Guides)
 
 ---
 
@@ -161,7 +165,7 @@ Valid `rel` values in the `dependencies` block (governed by DLMS-2026-0020):
 
 ## Tags
 
-Tags use lowercase hyphen-separated slugs. Controlled vocabulary is defined in DLMS-2026-0021 (Taxonomy). Do not invent new tags without checking the taxonomy first. Each document must have at least one tag identifying its wave (e.g., `wave-1`, `wave-3`).
+Tags use lowercase hyphen-separated slugs. Controlled vocabulary is defined in DLMS-2026-0021 (Taxonomy). Do not invent new tags without checking the taxonomy first. Each document should have at least one tag identifying its tier (e.g., `tier-4`, `tier-13`) and its doc_type (e.g., `policy`, `procedure`, `template`).
 
 ---
 
@@ -178,11 +182,14 @@ All documents in the corpus are currently `draft`. Status transitions require a 
 ## Things to Avoid
 
 - Do not use prose section headings in DLMS documents (`## My Section` → wrong; `## MY_SECTION` → correct)
-- Do not assign a doc_id without checking for the next available sequential ID in both corpus directories
-- Do not author a document in a wave whose dependencies are not all `drafted` in the gap register
+- Do not assign a doc_id without checking `corpus/corpus-index.md` for the highest existing ID (currently 0103; next is 0104)
 - Do not add fields to frontmatter that are not defined in DLMS-2026-0004 unless the template for that doc_type specifies them
 - Do not write narrative summaries longer than 3 sentences
-- Do not create loose files in the corpus root — policies go in `corpus/policies/`, templates in `corpus/templates/`
+- Do not create loose files in the corpus root — use the correct subdirectory:
+  - `corpus/policies/` — policies, SLAs, taxonomy, reference documents
+  - `corpus/templates/` — content templates (TMPL-*) and shared artefact templates
+  - `corpus/dod-templates/` — Definition of Done templates only
+  - `corpus/guides/` — procedures, operating guides, onboarding procedures
 
 ---
 

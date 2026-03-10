@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "TYPEDB_URL": {
+      "type": "promptString",
+      "description": "TypeDB server URL",
+      "default": "localhost:1729"
+    }
+  },
+  "servers": {
+    "nexus-internal": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/nexus/dist/server.js"],
+      "env": {
+        "TYPEDB_URL": "${input:TYPEDB_URL}",
+        "NEXUS_ROLE": "internal"
+      }
+    },
+    "nexus-external": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/nexus/dist/server.js"],
+      "env": {
+        "TYPEDB_URL": "${input:TYPEDB_URL}",
+        "NEXUS_ROLE": "external"
+      },
+      "disabled": true
+    },
+    "typedb": {
+      "url": "http://localhost:8001/mcp"
+    }
+  }
+}

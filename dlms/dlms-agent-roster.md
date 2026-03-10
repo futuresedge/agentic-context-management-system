@@ -345,7 +345,7 @@ The `DLM SysAdmin Agent` reads *only the briefing* — not the raw CI reports. T
 | `Policy Manager` | Assigned change directive + current policy doc | Draft updated policy → feeds into standard DLMS creation pipeline | `dlms-policies/` |
 | `SLA Manager` | Assigned change directive + current SLA doc + `performance-report.md` | Draft updated SLA → feeds into standard pipeline | `sla-registry.md` |
 | `Rules & Patterns Agent` | Assigned change directive + current rules/patterns docs | Draft updated rules or patterns → standard pipeline | `dlms-rules/`, `dlms-patterns/` |
-| `Guide Curator` | Assigned change directive + current guide | Draft updated guide → standard pipeline | `dlms-guides/` |
+| `Guide Curator` | Assigned change directive + current guide | Draft updated guide → standard pipeline | `corpus/guides/` |
 | `Configuration Controller` | Assigned change directive only | `config-change-log.md` + updated system config | System configuration |
 | `DoD Custodian` | Assigned change directive + all `[stage]-dod-templates.md` | Draft updated DoD templates → standard pipeline | Stage DoD templates |
 
@@ -365,11 +365,11 @@ The governance corpus maintained by the SysAdmin tier — all managed as DLMS do
 
 - `dlms-policies/` — operational rules with regulatory or compliance weight
 - `dlms-slas/` — performance targets per stage and for the delivery layer
-- `dlms-guides/` — how-to documentation for each agent class
+- `corpus/guides/` — how-to documentation for each agent class
 - `dlms-rules/` — hard constraints (e.g. naming conventions, access control rules)
 - `dlms-patterns/` — recommended approaches for recurring design problems
-- `dlms-templates/` — canonical document templates per doc type
-- `dlms-dod-templates/` — stage DoD templates per doc type, maintained by `DoD Custodian`
+- `corpus/templates/` — canonical document templates per doc type
+- `corpus/dod-templates/` — stage DoD templates per doc type, maintained by `DoD Custodian`
 
 Because these are documents in the DLMS, they are versioned, indexed, verified, and audited like any other document. When a policy changes, the version history is immutable. The `Knowledge Base Agent` accumulates learnings from their review cycles. The `Dependency Index Agent` tracks which other DLMS documents reference them — so when an SLA changes, downstream impact is immediately visible.
 

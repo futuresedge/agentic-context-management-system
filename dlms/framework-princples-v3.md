@@ -40,33 +40,33 @@ This dual promise is what makes the framework transformative, not just increment
 
 ### The ONE Ontology: Reality as Structure
 
-The framework is implemented on the ONE 6-dimension ontology — a universal model of reality itself, not any specific application[1]. This ontology is the structural substrate that makes principles enforceable rather than merely aspirational.
+The framework is implemented on the ONE 6-dimension ontology — a universal model of reality itself, not any specific application. This ontology is the structural substrate that makes principles enforceable rather than merely aspirational.
 
 #### The Six Dimensions
 
 Every entity, relationship, and event in the framework maps to exactly one of six dimensions:
 
-**1. Groups** — Hierarchical containers that enforce multi-tenancy, scope, and ownership boundaries. Examples: colonies, teams, organizations, projects, missions[2].
+**1. Groups** — Hierarchical containers that enforce multi-tenancy, scope, and ownership boundaries. Examples: colonies, teams, organizations, projects, missions.
 
-**2. Actors** — Entities that can authorize actions, including both humans and AI agents. Examples: researchers, operators, scouts, harvesters, system services[2].
+**2. Actors** — Entities that can authorize actions, including both humans and AI agents. Examples: researchers, operators, scouts, harvesters, system services.
 
-**3. Things** — Entities that exist but don't act on their own. Examples: tasks, specifications, proof templates, prototypes, patterns, documents, puzzles, concepts[2].
+**3. Things** — Entities that exist but don't act on their own. Examples: tasks, specifications, proof templates, prototypes, patterns, documents, puzzles, concepts.
 
-**4. Connections** — Relationships between entities. Examples: owns, authorized\_by, assigned\_to, reviewed\_by, purchased, enrolled\_in, member\_of[1].
+**4. Connections** — Relationships between entities. Examples: owns, authorized_by, assigned_to, reviewed_by, purchased, enrolled_in, member_of.
 
-**5. Events** — Immutable state changes over time. Examples: created, updated, verified, submitted, traversed, deposited\_pheromone, crystallized\_pattern[2].
+**5. Events** — Immutable state changes over time. Examples: created, updated, verified, submitted, traversed, deposited_pheromone, crystallized_pattern.
 
-**6. Knowledge** — Crystallized understanding that emerges from events. Examples: patterns, superhighways, embeddings, insights, reputation scores, efficiency baselines[2].
+**6. Knowledge** — Crystallized understanding that emerges from events. Examples: patterns, superhighways, embeddings, insights, reputation scores, efficiency baselines.
 
 #### Why This Matters
 
-Traditional software architectures model applications. The ONE ontology models **reality itself**[1]. This inversion has profound consequences:
+Traditional software architectures model applications. The ONE ontology models **reality itself**. This inversion has profound consequences:
 
 
 - **Structural enforcement** — Ethical constraints aren't policies to follow; they're structural impossibilities. An Actor without a capability Connection simply cannot perform that action.
-- **Pattern convergence** — Instead of 100 different patterns for different operations, everything uses the same six-dimensional pattern. AI agents achieve 98\% code generation accuracy because they master one pattern deeply rather than learn 100 patterns shallowly[1].
-- **Never breaks** — Reality doesn't change. Groups, Actors, Things, Connections, Events, and Knowledge are permanent categories. Technology changes, but these dimensions do not[1].
-- **Cross-domain learning** — Patterns crystallized in one domain (e.g., search optimization in cryptographic factorization) transfer to others (e.g., market analysis) because they're stored in the universal Knowledge dimension[2].
+- **Pattern convergence** — Instead of 100 different patterns for different operations, everything uses the same six-dimensional pattern. AI agents achieve 98\% code generation accuracy because they master one pattern deeply rather than learn 100 patterns shallowly.
+- **Never breaks** — Reality doesn't change. Groups, Actors, Things, Connections, Events, and Knowledge are permanent categories. Technology changes, but these dimensions do not.
+- **Cross-domain learning** — Patterns crystallized in one domain (e.g., search optimization in cryptographic factorization) transfer to others (e.g., market analysis) because they're stored in the universal Knowledge dimension.
 
 
 #### How Principles Map to Dimensions
@@ -124,38 +124,35 @@ This framework is designed for a world where humans and autonomous agents work t
 
 **What agents do better (currently and structurally):**
 
-\begin{itemize}
-\item Consistency — same inputs, same process, every time
-\item Auditability — every action is recorded by default
-\item Parallelism — multiple agents operate simultaneously without coordination
-\item Marginal cost — the tenth task costs the same as the first
-\item Speed — execution is near-instantaneous
-\item Perfect recall — the audit log is lossless and permanent
-\end{itemize}
+
+- Consistency — same inputs, same process, every time
+- Auditability — every action is recorded by default
+- Parallelism — multiple agents operate simultaneously without coordination
+- Marginal cost — the tenth task costs the same as the first
+- Speed — execution is near-instantaneous
+- Perfect recall — the audit log is lossless and permanent
 
 **What humans do better (currently and structurally):**
 
-\begin{itemize}
-\item Ethical judgment — genuine moral reasoning about values conflicts
-\item Irreversible decision authority — evaluating appropriateness in context
-\item Creative problem framing — identifying that the wrong problem is being solved
-\item Contextual wisdom — knowing when rules should yield to circumstances
-\item Novel situation handling — reasoning outside the training distribution
-\item Social and emotional intelligence — understanding motivation and culture
-\item Values alignment — caring about outcomes, not just outputs
-\end{itemize}
+
+- Ethical judgment — genuine moral reasoning about values conflicts
+- Irreversible decision authority — evaluating appropriateness in context
+- Creative problem framing — identifying that the wrong problem is being solved
+- Contextual wisdom — knowing when rules should yield to circumstances
+- Novel situation handling — reasoning outside the training distribution
+- Social and emotional intelligence — understanding motivation and culture
+- Values alignment — caring about outcomes, not just outputs
 
 **Structural limitations of agents (permanent):**
 
-\begin{itemize}
-\item Finite context windows — a constraint that will always exist
-\item Bounded authority — cannot evaluate beyond their defined scope
-\item No intrinsic values — do not care whether work serves a good purpose
-\end{itemize}
+
+- Finite context windows — a constraint that will always exist
+- Bounded authority — cannot evaluate beyond their defined scope
+- No intrinsic values — do not care whether work serves a good purpose
 
 **The design principle this generates:** The framework assigns each class of decision to the actor best suited to make it: agents for consistency, scale, and execution; humans for judgment, ethics, and irreversibility. This is not "humans oversee agents" (which implies adversarial monitoring). It is **deliberate complementarity**, a system designed so that each actor type does what it does uniquely well.
 
-**Ontological implementation**: In the Actors dimension, both humans and AI agents are first-class entities with role hierarchies (platform\_owner, group\_owner, operator, worker, viewer)[1]. Capability assignment happens through Connections — an Actor either holds a capability edge or does not. The framework protects human actors from doing work that agents should be doing (tedious, repetitive, low-judgment work) so human attention is preserved for decisions that genuinely require it. Human time is the scarcest resource in the system. Agents exist partly to create more space for human judgment where it matters most.
+**Ontological implementation**: In the Actors dimension, both humans and AI agents are first-class entities with role hierarchies (platform_owner, group_owner, operator, worker, viewer). Capability assignment happens through Connections — an Actor either holds a capability edge or does not. The framework protects human actors from doing work that agents should be doing (tedious, repetitive, low-judgment work) so human attention is preserved for decisions that genuinely require it. Human time is the scarcest resource in the system. Agents exist partly to create more space for human judgment where it matters most.
 
 ---
 
@@ -184,25 +181,23 @@ Technical correctness is necessary but not sufficient. A perfectly verified syst
 
 This principle is not a vague aspiration. It is a design constraint. When operational decisions conflict — between efficiency and equity, between speed and safety, between automation and human judgment — this principle provides the tiebreaker: choose the path that serves human flourishing.
 
-**Ontological implementation:** Groups must include governance structures (represented as Connections: has\_governance, delegates\_to) that include representation from those affected by outputs, not just those building with them. Contestability mechanisms exist as Event primitives — any Actor can raise\_contestation, creating an immutable Event that routes to human review. Economic benefit distribution is tracked through Knowledge dimension analytics — who benefits, who is displaced, what obligations exist.
+**Ontological implementation:** Groups must include governance structures (represented as Connections: has_governance, delegates_to) that include representation from those affected by outputs, not just those building with them. Contestability mechanisms exist as Event primitives — any Actor can raise_contestation, creating an immutable Event that routes to human review. Economic benefit distribution is tracked through Knowledge dimension analytics — who benefits, who is displaced, what obligations exist.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every domain adaptation includes an explicit statement of how it serves human flourishing in that domain
-\item Framework governance includes representation from those affected by its outputs, not just those building with it
-\item Contestability mechanisms exist for those harmed by framework decisions
-\item Economic benefits generated by efficiency gains are considered in design (Who benefits? Who is displaced? What obligations does the framework create?)
-\end{itemize}
+
+- Every domain adaptation includes an explicit statement of how it serves human flourishing in that domain
+- Framework governance includes representation from those affected by its outputs, not just those building with it
+- Contestability mechanisms exist for those harmed by framework decisions
+- Economic benefits generated by efficiency gains are considered in design (Who benefits? Who is displaced? What obligations does the framework create?)
 
 **Violation examples:**
 
-\begin{itemize}
-\item A DAO using the framework to coordinate gig workers at below-minimum-wage piece rates, optimising for technical verification while creating economic harm
-\item A system that produces perfect audit logs but concentrates all decision authority in a single human actor with no accountability
-\item Deployment of the framework in a domain where automation primarily serves to reduce headcount rather than elevate the remaining workers' roles
-\item Use of the framework to verify work outputs without considering whether the work itself is ethical or beneficial
-\end{itemize}
+
+- A DAO using the framework to coordinate gig workers at below-minimum-wage piece rates, optimising for technical verification while creating economic harm
+- A system that produces perfect audit logs but concentrates all decision authority in a single human actor with no accountability
+- Deployment of the framework in a domain where automation primarily serves to reduce headcount rather than elevate the remaining workers' roles
+- Use of the framework to verify work outputs without considering whether the work itself is ethical or beneficial
 
 ---
 
@@ -216,25 +211,23 @@ Humans excel at value judgments, contextual wisdom, and decisions with irreversi
 
 The framework's design deliberately assigns work based on natural capability. Agents handle the repeatable, the parallelisable, and the precisely specifiable. Humans handle the ethical, the irreversible, and the genuinely novel. This is not a transitional state until "full automation" is achieved — it is the design.
 
-**Ontological implementation:** The Actors dimension explicitly models both humans (human\_actor) and AI agents (ai\_agent) as authorisable entities with distinct subtypes and roles[1][2]. Capability Connections encode natural boundaries — certain operations (approve\_for\_production, sign\_contract, allocate\_budget) structurally require human\_actor subtypes. AI agents cannot hold these Connections, making the separation architectural rather than policy-based. The framework tracks which work types are assigned to which Actor subtypes through Knowledge dimension patterns, ensuring agents don't encroach on human-appropriate work and humans aren't burdened with agent-appropriate repetition.
+**Ontological implementation:** The Actors dimension explicitly models both humans (human_actor) and AI agents (ai_agent) as authorisable entities with distinct subtypes and roles. Capability Connections encode natural boundaries — certain operations (approve_for_production, sign_contract, allocate_budget) structurally require human_actor subtypes. AI agents cannot hold these Connections, making the separation architectural rather than policy-based. The framework tracks which work types are assigned to which Actor subtypes through Knowledge dimension patterns, ensuring agents don't encroach on human-appropriate work and humans aren't burdened with agent-appropriate repetition.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Clear role boundaries between human and agent decision authority
-\item Protection of human actors from work agents should be doing (preserving human attention for where it is irreplaceable)
-\item Structural gates requiring human judgment at irreversible thresholds
-\item No pressure to reduce human involvement beyond what serves the work's quality and the humans' flourishing
-\end{itemize}
+
+- Clear role boundaries between human and agent decision authority
+- Protection of human actors from work agents should be doing (preserving human attention for where it is irreplaceable)
+- Structural gates requiring human judgment at irreversible thresholds
+- No pressure to reduce human involvement beyond what serves the work's quality and the humans' flourishing
 
 **Violation examples:**
 
-\begin{itemize}
-\item Designing agents to make irreversible decisions (production deployment, contract signing, resource allocation) without human gates
-\item Requiring humans to perform repetitive verification that agents could perform with higher consistency
-\item Treating human judgment as an unfortunate necessity to be minimised rather than a valuable input to be preserved
-\item Creating a framework where reducing human involvement is an explicit goal rather than a byproduct of better role allocation
-\end{itemize}
+
+- Designing agents to make irreversible decisions (production deployment, contract signing, resource allocation) without human gates
+- Requiring humans to perform repetitive verification that agents could perform with higher consistency
+- Treating human judgment as an unfortunate necessity to be minimised rather than a valuable input to be preserved
+- Creating a framework where reducing human involvement is an explicit goal rather than a byproduct of better role allocation
 
 ---
 
@@ -250,25 +243,23 @@ The same applies here. An agent that does not hold the capability to deploy to p
 
 This is not a claim that all ethical considerations can be made structural. Some cannot — they require judgment in context. But where a constraint can be made structural, it should be. Structural ethics scale. Declarative ethics do not.
 
-**Ontological implementation:** Authority is capability-based through the Connections dimension. An Actor without an authorized\_by Connection to a capability Thing simply cannot invoke that operation — the ontology prevents the operation at query time, not through runtime permission checks[1]. Groups enforce scope boundaries — an Actor in Group A cannot operate on Things in Group B without explicit cross-group Connections. Irreversible actions (production deployment, contract signing) structurally require human\_actor involvement through Connection constraints. The audit log (Events dimension) is append-only by database design — suppression of evidence is structurally impossible because TypeDB does not support Event deletion[1].
+**Ontological implementation:** Authority is capability-based through the Connections dimension. An Actor without an authorized_by Connection to a capability Thing simply cannot invoke that operation — the ontology prevents the operation at query time, not through runtime permission checks. Groups enforce scope boundaries — an Actor in Group A cannot operate on Things in Group B without explicit cross-group Connections. Irreversible actions (production deployment, contract signing) structurally require human_actor involvement through Connection constraints. The audit log (Events dimension) is append-only by database design — suppression of evidence is structurally impossible because TypeDB does not support Event deletion.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Authority is capability-based (you cannot do what you do not hold the tool to do)
-\item Irreversible actions require human presence structurally, not as a bypassable gate
-\item Audit logs are immutable by design — suppression of evidence is structurally impossible
-\item Verification is structurally independent — the executor cannot be the reviewer
-\end{itemize}
+
+- Authority is capability-based (you cannot do what you do not hold the tool to do)
+- Irreversible actions require human presence structurally, not as a bypassable gate
+- Audit logs are immutable by design — suppression of evidence is structurally impossible
+- Verification is structurally independent — the executor cannot be the reviewer
 
 **Violation examples:**
 
-\begin{itemize}
-\item An agent has a write tool but a policy says "only use it for X" — policy without structural enforcement
-\item A "skip approval" flag exists for "low-risk" cases (making irreversible gates bypassable)
-\item Audit logs can be deleted or hidden for "privacy" or "performance" reasons (structural transparency with exceptions)
-\item A single agent holds both submit and verify tools and is trusted to "do the right thing"
-\end{itemize}
+
+- An agent has a write tool but a policy says "only use it for X" — policy without structural enforcement
+- A "skip approval" flag exists for "low-risk" cases (making irreversible gates bypassable)
+- Audit logs can be deleted or hidden for "privacy" or "performance" reasons (structural transparency with exceptions)
+- A single agent holds both submit and verify tools and is trusted to "do the right thing"
 
 ---
 
@@ -284,25 +275,23 @@ These principles define how the framework produces trustworthy outputs — outpu
 
 In a structure-based system, an output is not trustworthy because of who produced it. It is trustworthy because an independent verifier confirmed it against pre-defined criteria using defined evidence. The performer's identity is irrelevant. The structure of the verification is everything.
 
-**Ontological implementation:** Proof templates are Things with type proof\_template\_concept that must exist before corresponding task Things are created (enforced through Connection: task requires\_template proof\_template)[1]. Verification is performed by an Actor with a verifies Connection to the proof Thing, producing an immutable verification\_complete Event with attributes: verifier\_id, timestamp, pass/fail status, and references to the proof\_template Thing. The Events dimension provides a permanent, immutable record — every verification is witnessed and cannot be retroactively altered[2].
+**Ontological implementation:** Proof templates are Things with type proof_template_concept that must exist before corresponding task Things are created (enforced through Connection: task requires_template proof_template). Verification is performed by an Actor with a verifies Connection to the proof Thing, producing an immutable verification_complete Event with attributes: verifier_id, timestamp, pass/fail status, and references to the proof_template Thing. The Events dimension provides a permanent, immutable record — every verification is witnessed and cannot be retroactively altered.
 
 **This principle requires:**
 
-\begin{itemize}
-\item A definition of done exists before work begins (the proof template)
-\item Verification is performed by an actor other than the performer
-\item The verifier has access to the proof template and the submitted proof, not just the final output
-\item A passing verification produces a permanent, immutable record
-\end{itemize}
+
+- A definition of done exists before work begins (the proof template)
+- Verification is performed by an actor other than the performer
+- The verifier has access to the proof template and the submitted proof, not just the final output
+- A passing verification produces a permanent, immutable record
 
 **Violation examples:**
 
-\begin{itemize}
-\item A performer submits work and marks it "done" without independent review
-\item A reviewer is given discretion to "use their judgment" rather than verifying against explicit criteria
-\item A proof template is written after the work is complete to match what was actually built
-\item Verification is skipped because "we trust this person"
-\end{itemize}
+
+- A performer submits work and marks it "done" without independent review
+- A reviewer is given discretion to "use their judgment" rather than verifying against explicit criteria
+- A proof template is written after the work is complete to match what was actually built
+- Verification is skipped because "we trust this person"
 
 ---
 
@@ -316,25 +305,23 @@ This model breaks at scale. Informal proof is not auditable. It is not reproduci
 
 In a structure-based system, the proof is a first-class artefact. It is structured, attributed, and permanent. The proof is not an afterthought or a checkbox — it is the output. The work product is evidence that the proof is valid.
 
-**Ontological implementation:** Proof documents are Things with type proof\_document\_concept, structured with properties: {criteria: [], evidence: [], mapping: []}[1]. Each criterion in the proof template maps to specific evidence (file hashes, test outputs, measurement results) stored as attributes or Connections to other Things (e.g., test\_result\_concept). The verifier queries the proof Thing, not the underlying work product directly. Task state transitions (submitted → verified → accepted) are Events that require both a proof Thing and a verification Event to exist — the state machine is enforced through the ontology[2].
+**Ontological implementation:** Proof documents are Things with type proof_document_concept, structured with properties: {criteria: [], evidence: [], mapping: []}. Each criterion in the proof template maps to specific evidence (file hashes, test outputs, measurement results) stored as attributes or Connections to other Things (e.g., test_result_concept). The verifier queries the proof Thing, not the underlying work product directly. Task state transitions (submitted → verified → accepted) are Events that require both a proof Thing and a verification Event to exist — the state machine is enforced through the ontology.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every unit of work has a proof template defining what evidence constitutes completion
-\item The performer produces a proof document mapping evidence to each criterion in the template
-\item The verifier checks the proof document, not the underlying work product directly
-\item A proof without complete evidence for all criteria is incomplete, regardless of the quality of the work product
-\end{itemize}
+
+- Every unit of work has a proof template defining what evidence constitutes completion
+- The performer produces a proof document mapping evidence to each criterion in the template
+- The verifier checks the proof document, not the underlying work product directly
+- A proof without complete evidence for all criteria is incomplete, regardless of the quality of the work product
 
 **Violation examples:**
 
-\begin{itemize}
-\item "The feature works, trust me" (assertion without evidence)
-\item "Here's the code, review it" (no proof template, no structured evidence)
-\item "All tests pass" (evidence exists but is not mapped to acceptance criteria in a verifiable proof document)
-\item Submitting work without a proof document because "the output speaks for itself"
-\end{itemize}
+
+- "The feature works, trust me" (assertion without evidence)
+- "Here's the code, review it" (no proof template, no structured evidence)
+- "All tests pass" (evidence exists but is not mapped to acceptance criteria in a verifiable proof document)
+- Submitting work without a proof document because "the output speaks for itself"
 
 ---
 
@@ -348,25 +335,23 @@ In capability-based security models (OCAP), authority is not declared — it is 
 
 This framework applies OCAP principles to knowledge work coordination. Tool possession defines capability. An agent that does not hold a write tool for a document cannot write it. An agent that does not hold a submit tool for a proof cannot submit it. Authority is structural, immediate, and unforgeable.
 
-**Ontological implementation:** Tools are modeled as Things (tool\_concept) and capabilities are Connections: Actor authorized\_by Tool scoped\_to Group[1]. An Actor attempting an operation without the corresponding Connection receives a query failure at the database level — there is no runtime "permission denied" because the query itself cannot complete. Role hierarchy (platform\_owner > group\_owner > operator > worker > viewer) is encoded as Connection constraints in the Groups dimension[1]. Authority gaps are visible immediately — an agent that needs a capability it does not hold produces a failed query Event, which surfaces as an uncertainty signal requiring human attention.
+**Ontological implementation:** Tools are modeled as Things (tool_concept) and capabilities are Connections: Actor authorized_by Tool scoped_to Group. An Actor attempting an operation without the corresponding Connection receives a query failure at the database level — there is no runtime "permission denied" because the query itself cannot complete. Role hierarchy (platform_owner > group_owner > operator > worker > viewer) is encoded as Connection constraints in the Groups dimension. Authority gaps are visible immediately — an agent that needs a capability it does not hold produces a failed query Event, which surfaces as an uncertainty signal requiring human attention.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Tools are the atomic unit of capability
-\item Capabilities are assigned at design time (which agents hold which tools) and activation time (which task-scoped tools are assigned when a task activates), never at runtime
-\item No runtime permission checks — if a tool call reaches the server, the actor holds the tool
-\item Authority gaps are visible immediately: an agent that needs a capability it does not hold cannot proceed silently
-\end{itemize}
+
+- Tools are the atomic unit of capability
+- Capabilities are assigned at design time (which agents hold which tools) and activation time (which task-scoped tools are assigned when a task activates), never at runtime
+- No runtime permission checks — if a tool call reaches the server, the actor holds the tool
+- Authority gaps are visible immediately: an agent that needs a capability it does not hold cannot proceed silently
 
 **Violation examples:**
 
-\begin{itemize}
-\item An agent is told "you have permission to write this file" without actually holding the corresponding write tool
-\item An actor checks at runtime whether they "should" have access before attempting an operation
-\item A role title ("Admin") is used to determine authority rather than possession of a specific capability
-\item An agent "escalates" a request for a capability it does not hold, and the capability is granted at runtime
-\end{itemize}
+
+- An agent is told "you have permission to write this file" without actually holding the corresponding write tool
+- An actor checks at runtime whether they "should" have access before attempting an operation
+- A role title ("Admin") is used to determine authority rather than possession of a specific capability
+- An agent "escalates" a request for a capability it does not hold, and the capability is granted at runtime
 
 ---
 
@@ -380,28 +365,26 @@ In smart contract systems, the blockchain is the witness. Every transaction, eve
 
 In this framework, the audit log is the witness. Every tool call, every document read, every search query, every state transition is recorded with full attribution. The log is append-only and immutable. It is the foundation of the chain-of-custody model: given any output, trace backwards through the audit log to see every action that contributed to it.
 
-**Ontological implementation:** The Events dimension is the audit log[2]. Every action creates an Event entity: traversal, deposit, observation, discovery, verification, submission, state\_transition. Events are immutable by TypeDB design — once written, they cannot be updated or deleted[1]. Each Event has required attributes: timestamp, actor\_id (who), event\_type (what), and Connections to affected Things (which task, which proof, which document). Efficiency metrics (token\_count, latency, energy\_estimate) are Event attributes, enabling lifecycle cost analysis. Chain-of-custody queries traverse Event Connections backwards: "show all Events that contributed to proof P" walks the graph from P through all referenced Things and their creation Events.
+**Ontological implementation:** The Events dimension is the audit log. Every action creates an Event entity: traversal, deposit, observation, discovery, verification, submission, state_transition. Events are immutable by TypeDB design — once written, they cannot be updated or deleted. Each Event has required attributes: timestamp, actor_id (who), event_type (what), and Connections to affected Things (which task, which proof, which document). Efficiency metrics (token_count, latency, energy_estimate) are Event attributes, enabling lifecycle cost analysis. Chain-of-custody queries traverse Event Connections backwards: "show all Events that contributed to proof P" walks the graph from P through all referenced Things and their creation Events.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every tool produces an audit entry, without exception
-\item Audit entries are written by the tool itself, not by the caller — a caller cannot suppress, modify, or forge an audit entry
-\item Audit entries include: timestamp, actor, tool, inputs, outputs, state changes, efficiency metrics (token count, latency), and references to prior audit entries that contributed to this action
-\item The audit log is immutable — no entry is ever updated or deleted after creation
-\item Privacy and security requirements are met through access control to the log, not through selective logging
-\end{itemize}
+
+- Every tool produces an audit entry, without exception
+- Audit entries are written by the tool itself, not by the caller — a caller cannot suppress, modify, or forge an audit entry
+- Audit entries include: timestamp, actor, tool, inputs, outputs, state changes, efficiency metrics (token count, latency), and references to prior audit entries that contributed to this action
+- The audit log is immutable — no entry is ever updated or deleted after creation
+- Privacy and security requirements are met through access control to the log, not through selective logging
 
 **Violation examples:**
 
-\begin{itemize}
-\item A tool call completes without producing an audit entry
-\item An audit entry is written by the caller rather than the tool
-\item An audit entry is deleted or modified after the fact
-\item "Debug mode" suppresses audit entries
-\item An actor declares "this action isn't important enough to log"
-\item A "privacy-preserving" mode disables audit logging for "sensitive" operations
-\end{itemize}
+
+- A tool call completes without producing an audit entry
+- An audit entry is written by the caller rather than the tool
+- An audit entry is deleted or modified after the fact
+- "Debug mode" suppresses audit entries
+- An actor declares "this action isn't important enough to log"
+- A "privacy-preserving" mode disables audit logging for "sensitive" operations
 
 ---
 
@@ -413,25 +396,23 @@ In this framework, the audit log is the witness. Every tool call, every document
 
 Independent verification removes these biases by removing the shared context. The verifier does not know what the author intended. The verifier only knows what the specification required and what evidence was provided. This ignorance is not a bug — it is the feature. The verifier sees the work the way a future stakeholder will: without access to the author's internal model.
 
-**Ontological implementation:** EXECUTOR and REVIEWER are distinct Actor subtypes (ai\_agent with caste: executor vs caste: reviewer)[2]. Connection constraints enforce separation: an Actor with submitted Connection to proof P cannot hold verifies Connection to the same P. This is a schema-level constraint in TypeDB — attempts to create both Connections for the same Actor-proof pair fail at query time[1]. The verifier reads the proof\_template Thing and proof\_document Thing, following Connections to evidence Things, but does not read implementation artifacts unless they're explicitly referenced as evidence. Verification happens after execution is complete — state transition Events enforce temporal ordering (cannot create verification Event until submission Event exists)[2].
+**Ontological implementation:** EXECUTOR and REVIEWER are distinct Actor subtypes (ai_agent with caste: executor vs caste: reviewer). Connection constraints enforce separation: an Actor with submitted Connection to proof P cannot hold verifies Connection to the same P. This is a schema-level constraint in TypeDB — attempts to create both Connections for the same Actor-proof pair fail at query time. The verifier reads the proof_template Thing and proof_document Thing, following Connections to evidence Things, but does not read implementation artifacts unless they're explicitly referenced as evidence. Verification happens after execution is complete — state transition Events enforce temporal ordering (cannot create verification Event until submission Event exists).
 
 **This principle requires:**
 
-\begin{itemize}
-\item EXECUTOR and REVIEWER are structurally separate agent classes
-\item An agent that holds a submit tool for a document must not hold the verify tool for the same document
-\item The verifier reads the proof template and the proof, not the work product directly (unless the work product is referenced as evidence in the proof)
-\item Verification happens after execution is complete, never during
-\end{itemize}
+
+- EXECUTOR and REVIEWER are structurally separate agent classes
+- An agent that holds a submit tool for a document must not hold the verify tool for the same document
+- The verifier reads the proof template and the proof, not the work product directly (unless the work product is referenced as evidence in the proof)
+- Verification happens after execution is complete, never during
 
 **Violation examples:**
 
-\begin{itemize}
-\item A single agent performs a task and marks it as QA-passed without independent review
-\item A reviewer is part of the same team as the performer and shares context about what the task "was supposed to do" beyond what the specification states
-\item A performer runs their own tests, reviews the results, and submits their work as "validated"
-\item A manager approves work produced by their direct report without independent verification
-\end{itemize}
+
+- A single agent performs a task and marks it as QA-passed without independent review
+- A reviewer is part of the same team as the performer and shares context about what the task "was supposed to do" beyond what the specification states
+- A performer runs their own tests, reviews the results, and submits their work as "validated"
+- A manager approves work produced by their direct report without independent verification
 
 ---
 
@@ -445,25 +426,23 @@ In knowledge work, the same principle applies. An agent may hallucinate and prod
 
 The framework achieves this through structural redundancy: independent verification, multi-perspective ideation, uncertainty surfacing, and audit trails. If an executor produces bad output, the reviewer catches it. If a specification is ambiguous, the executor surfaces uncertainty. If a pattern in the library is flawed, repeated application with negative outcomes causes it to be retired.
 
-**Ontological implementation:** Critical verification paths support quorum-based approval through multiple verifies Connections from different Actors to the same proof Thing. Quorum thresholds (e.g., "3 of 5 must pass") are encoded as rules in the Groups dimension (group has\_verification\_policy policy)[1]. No single Actor holds unchecked authority — even platform\_owner operations create Events that are queryable by group\_owner Actors. Errors are detectable through structural checks: if verification fails repeatedly, the pattern Thing referenced by the task accumulates negative\_outcome Events, lowering its confidence score in the Knowledge dimension until it falls below the active threshold[2]. The framework degrades gracefully — if an Actor becomes unavailable, Tasks assigned to that Actor transition to available\_for\_assignment state, creating priority Events that route to other qualified Actors.
+**Ontological implementation:** Critical verification paths support quorum-based approval through multiple verifies Connections from different Actors to the same proof Thing. Quorum thresholds (e.g., "3 of 5 must pass") are encoded as rules in the Groups dimension (group has_verification_policy policy). No single Actor holds unchecked authority — even platform_owner operations create Events that are queryable by group_owner Actors. Errors are detectable through structural checks: if verification fails repeatedly, the pattern Thing referenced by the task accumulates negative_outcome Events, lowering its confidence score in the Knowledge dimension until it falls below the active threshold. The framework degrades gracefully — if an Actor becomes unavailable, Tasks assigned to that Actor transition to available_for_assignment state, creating priority Events that route to other qualified Actors.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Critical verification paths have multiple independent verifiers (parallel reviewers, quorum-based approval)
-\item No single actor holds unchecked authority over consequential decisions
-\item Errors are detectable through structural checks (independent verification, pattern matching against known anti-patterns, consistency checks)
-\item The framework degrades gracefully when components fail (an unavailable agent does not block all work; it routes to alternatives or escalates to human attention)
-\end{itemize}
+
+- Critical verification paths have multiple independent verifiers (parallel reviewers, quorum-based approval)
+- No single actor holds unchecked authority over consequential decisions
+- Errors are detectable through structural checks (independent verification, pattern matching against known anti-patterns, consistency checks)
+- The framework degrades gracefully when components fail (an unavailable agent does not block all work; it routes to alternatives or escalates to human attention)
 
 **Violation examples:**
 
-\begin{itemize}
-\item A single reviewer verifies all work in a domain, creating a single point of failure
-\item An agent produces output without submitting it for review because "this is a simple case"
-\item FrameworkOwner has unchecked authority to modify any artefact without review or audit
-\item System failure modes are silent (an agent fails, work stops, no signal is produced)
-\end{itemize}
+
+- A single reviewer verifies all work in a domain, creating a single point of failure
+- An agent produces output without submitting it for review because "this is a simple case"
+- FrameworkOwner has unchecked authority to modify any artefact without review or audit
+- System failure modes are silent (an agent fails, work stops, no signal is produced)
 
 ---
 
@@ -477,25 +456,23 @@ Distributed verification, borrowed from blockchain consensus mechanisms, solves 
 
 This model is essential for decentralised systems (DAOs, multi-organisation collaborations) and valuable even for centralised ones (reduces bottlenecks, improves resilience).
 
-**Ontological implementation:** Verifier pools are Groups with type verifier\_pool\_group containing multiple Actors with caste: reviewer[2]. When a proof Thing transitions to ready\_for\_verification state (an Event), the system queries the appropriate pool Group and selects N Actors based on Knowledge dimension attributes: reputation\_score, current\_workload, domain\_expertise. Each selected Actor creates a verifies Connection and ultimately a verification Event (pass/fail). The quorum rule is a Group attribute: required\_verifications: 3, total\_selected: 5. Once quorum Events are recorded, the proof Thing transitions to verified state (or rejected if quorum fails). Reputation tracking happens in the Knowledge dimension — Actors whose verifications correlate with eventual quality outcomes gain reputation; those whose verifications are outliers lose reputation[2].
+**Ontological implementation:** Verifier pools are Groups with type verifier_pool_group containing multiple Actors with caste: reviewer. When a proof Thing transitions to ready_for_verification state (an Event), the system queries the appropriate pool Group and selects N Actors based on Knowledge dimension attributes: reputation_score, current_workload, domain_expertise. Each selected Actor creates a verifies Connection and ultimately a verification Event (pass/fail). The quorum rule is a Group attribute: required_verifications: 3, total_selected: 5. Once quorum Events are recorded, the proof Thing transitions to verified state (or rejected if quorum fails). Reputation tracking happens in the Knowledge dimension — Actors whose verifications correlate with eventual quality outcomes gain reputation; those whose verifications are outliers lose reputation.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Verification can be performed by any qualified actor from a pool, not a specific named actor
-\item Quorum thresholds are defined per work type (some work requires unanimous agreement, some requires simple majority)
-\item Verifiers are selected by the system based on availability, reputation, and workload — not by the performer
-\item Reputation systems track verifier accuracy over time (verifiers who consistently pass poor work or fail good work lose standing)
-\end{itemize}
+
+- Verification can be performed by any qualified actor from a pool, not a specific named actor
+- Quorum thresholds are defined per work type (some work requires unanimous agreement, some requires simple majority)
+- Verifiers are selected by the system based on availability, reputation, and workload — not by the performer
+- Reputation systems track verifier accuracy over time (verifiers who consistently pass poor work or fail good work lose standing)
 
 **Violation examples:**
 
-\begin{itemize}
-\item "Only Alice can review this type of work" (single point of failure)
-\item A performer selects their preferred reviewer from the pool
-\item No quorum threshold exists — a single reviewer's pass is sufficient for all work types
-\item Verifier reputation is not tracked — a consistently inaccurate verifier is indistinguishable from an accurate one
-\end{itemize}
+
+- "Only Alice can review this type of work" (single point of failure)
+- A performer selects their preferred reviewer from the pool
+- No quorum threshold exists — a single reviewer's pass is sufficient for all work types
+- Verifier reputation is not tracked — a consistently inaccurate verifier is indistinguishable from an accurate one
 
 ---
 
@@ -513,25 +490,23 @@ Humans in groups can provide cognitive diversity, but it requires careful facili
 
 At agent marginal costs, this is economically viable even for small problems. At human costs, it was only viable for the largest problems. The framework makes thorough multi-perspective exploration the default, not the exception.
 
-**Ontological implementation:** Ideation agents are Actors with distinct cognitive\_orientation attributes: critical, optimistic, creative, emotional, factual, procedural (inspired by Six Thinking Hats)[2]. When a problem Thing enters ideation phase, the framework spawns multiple Actors (or activates multiple existing Actors with appropriate orientations) within an ideation\_session Group. Each Actor produces an ideation\_output Thing with Connections to the problem Thing. A synthesis Actor (with orientation: integrative) reads all ideation\_output Things and produces a synthesized\_solution Thing. This entire process creates a graph of Connections and Events in the Knowledge dimension, making cognitive diversity patterns queryable and improvable over time[2].
+**Ontological implementation:** Ideation agents are Actors with distinct cognitive_orientation attributes: critical, optimistic, creative, emotional, factual, procedural (inspired by Six Thinking Hats). When a problem Thing enters ideation phase, the framework spawns multiple Actors (or activates multiple existing Actors with appropriate orientations) within an ideation_session Group. Each Actor produces an ideation_output Thing with Connections to the problem Thing. A synthesis Actor (with orientation: integrative) reads all ideation_output Things and produces a synthesized_solution Thing. This entire process creates a graph of Connections and Events in the Knowledge dimension, making cognitive diversity patterns queryable and improvable over time.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Problem exploration includes multiple agents with distinct cognitive orientations (inspired by de Bono's Six Thinking Hats or equivalent)
-\item Ideation outputs are synthesised, not merely aggregated
-\item Premature convergence on the first reasonable solution is structurally prevented (ideation produces multiple candidates; prioritisation selects from the set)
-\item Cognitive diversity is applied proportionally (simple problems may use fewer perspectives; complex or high-stakes problems use more)
-\end{itemize}
+
+- Problem exploration includes multiple agents with distinct cognitive orientations (inspired by de Bono's Six Thinking Hats or equivalent)
+- Ideation outputs are synthesised, not merely aggregated
+- Premature convergence on the first reasonable solution is structurally prevented (ideation produces multiple candidates; prioritisation selects from the set)
+- Cognitive diversity is applied proportionally (simple problems may use fewer perspectives; complex or high-stakes problems use more)
 
 **Violation examples:**
 
-\begin{itemize}
-\item A single agent generates a solution, and execution begins immediately without alternative exploration
-\item Multiple agents are used but all have the same cognitive orientation (e.g., all optimistic, none critical)
-\item Ideation produces five alternatives, and the first one is always chosen without evaluation
-\item "We don't have time for exploration" is used to skip ideation even for high-stakes problems
-\end{itemize}
+
+- A single agent generates a solution, and execution begins immediately without alternative exploration
+- Multiple agents are used but all have the same cognitive orientation (e.g., all optimistic, none critical)
+- Ideation produces five alternatives, and the first one is always chosen without evaluation
+- "We don't have time for exploration" is used to skip ideation even for high-stakes problems
 
 ---
 
@@ -545,25 +520,23 @@ Prototyping and validation — building the minimal version necessary to test co
 
 At agent marginal costs, prototyping is nearly always cost-effective. The framework should treat validation as a standard phase between specification and execution, not an optional luxury for high-risk work.
 
-**Ontological implementation:** Prototype Things are distinct from full task Things (type: prototype\_concept vs task\_concept)[1]. Prototypes have their own proof\_template Things defining validation criteria: user\_acceptance, technical\_feasibility, performance\_benchmarks. A task Thing cannot transition from specified to in\_execution state until a corresponding prototype Thing has transitioned to validation\_passed state — this is enforced through Connection constraints (task requires\_validated\_prototype prototype)[1]. Validation failures create Events with rich properties describing what failed and why, feeding the Knowledge dimension so patterns learn to avoid similar approaches[2].
+**Ontological implementation:** Prototype Things are distinct from full task Things (type: prototype_concept vs task_concept). Prototypes have their own proof_template Things defining validation criteria: user_acceptance, technical_feasibility, performance_benchmarks. A task Thing cannot transition from specified to in_execution state until a corresponding prototype Thing has transitioned to validation_passed state — this is enforced through Connection constraints (task requires_validated_prototype prototype). Validation failures create Events with rich properties describing what failed and why, feeding the Knowledge dimension so patterns learn to avoid similar approaches.
 
 **This principle requires:**
 
-\begin{itemize}
-\item High-stakes or novel work includes a validation phase between specification and full execution
-\item Prototypes have their own proof templates (what does a successful validation look like?)
-\item Validation includes user-facing testing where applicable, not just technical validation
-\item Validation failures are expected and non-punitive — they are the mechanism by which bad approaches are filtered before they become expensive mistakes
-\end{itemize}
+
+- High-stakes or novel work includes a validation phase between specification and full execution
+- Prototypes have their own proof templates (what does a successful validation look like?)
+- Validation includes user-facing testing where applicable, not just technical validation
+- Validation failures are expected and non-punitive — they are the mechanism by which bad approaches are filtered before they become expensive mistakes
 
 **Violation examples:**
 
-\begin{itemize}
-\item Specifications move directly to full execution without validation
-\item Prototypes are built but not tested against real user needs or environmental constraints
-\item Validation failures are treated as performer failures rather than as valuable information
-\item "We'll validate in production" is the default stance
-\end{itemize}
+
+- Specifications move directly to full execution without validation
+- Prototypes are built but not tested against real user needs or environmental constraints
+- Validation failures are treated as performer failures rather than as valuable information
+- "We'll validate in production" is the default stance
 
 ---
 
@@ -577,25 +550,23 @@ Lifecycle efficiency optimises for total time and total cost from problem identi
 
 At agent marginal costs — where early-stage cognitive work costs token budget but downstream rework costs both tokens and time — the calculus overwhelmingly favours front-loading cognitive effort.
 
-**Ontological implementation:** Every Event includes efficiency attributes: token\_count\_input, token\_count\_output, latency\_ms, estimated\_energy\_kwh[2]. The Knowledge dimension aggregates these across entire task lifecycles, creating lifecycle\_cost Things with properties: {discovery\_cost, ideation\_cost, specification\_cost, execution\_cost, verification\_cost, rework\_cost, operations\_cost}[2]. Rework rates are tracked as Events: rework\_required Event references the original task Thing and records the reason. High rework rates for tasks that skipped ideation create negative correlation patterns in the Knowledge dimension, which inform future workflow recommendations. Environmental impact calculations aggregate energy estimates across all Events in a task lifecycle.
+**Ontological implementation:** Every Event includes efficiency attributes: token_count_input, token_count_output, latency_ms, estimated_energy_kwh. The Knowledge dimension aggregates these across entire task lifecycles, creating lifecycle_cost Things with properties: {discovery_cost, ideation_cost, specification_cost, execution_cost, verification_cost, rework_cost, operations_cost}. Rework rates are tracked as Events: rework_required Event references the original task Thing and records the reason. High rework rates for tasks that skipped ideation create negative correlation patterns in the Knowledge dimension, which inform future workflow recommendations. Environmental impact calculations aggregate energy estimates across all Events in a task lifecycle.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Efficiency metrics track full lifecycle cost, not per-stage cost
-\item Rework rates, uncertainty rates, and validation pass rates are tracked as efficiency indicators
-\item Framework economics explicitly account for the cost of rework vs. the cost of prevention
-\item Energy consumption and environmental footprint are included in efficiency calculations, not just token count and time
-\end{itemize}
+
+- Efficiency metrics track full lifecycle cost, not per-stage cost
+- Rework rates, uncertainty rates, and validation pass rates are tracked as efficiency indicators
+- Framework economics explicitly account for the cost of rework vs. the cost of prevention
+- Energy consumption and environmental footprint are included in efficiency calculations, not just token count and time
 
 **Violation examples:**
 
-\begin{itemize}
-\item Skipping discovery because "specification is fast enough"
-\item Treating agent token costs as waste because they don't produce "deliverables"
-\item Celebrating reduced specification time while ignoring increased rework rates
-\item Optimising only for speed to deployment, ignoring post-deployment rework and operations costs
-\end{itemize}
+
+- Skipping discovery because "specification is fast enough"
+- Treating agent token costs as waste because they don't produce "deliverables"
+- Celebrating reduced specification time while ignoring increased rework rates
+- Optimising only for speed to deployment, ignoring post-deployment rework and operations costs
 
 ---
 
@@ -609,27 +580,25 @@ More importantly, efficiency metrics are diagnostic signals. An agent that uses 
 
 The framework should instrument every tool call with efficiency metrics, aggregate them per task and per agent class, and use anomalies as signals for improvement.
 
-**Ontological implementation:** As described in PF3, every Event logs token\_count, latency, and energy\_estimate as attributes[2]. The Knowledge dimension maintains baseline Things for each Actor subtype and task type: expected\_token\_range, expected\_latency\_range. Anomaly detection happens through TypeDB rules: if an Event's metrics exceed baseline thresholds by >2 standard deviations, create an efficiency\_anomaly Event that routes to analysis[1]. Context curation is tracked — if high token usage correlates with large context\_card Things, the pattern learns to trim context. Pattern effectiveness includes efficiency in its scoring: a pattern that reduces lifecycle cost gains confidence; one that increases cost loses confidence[2].
+**Ontological implementation:** As described in PF3, every Event logs token_count, latency, and energy_estimate as attributes. The Knowledge dimension maintains baseline Things for each Actor subtype and task type: expected_token_range, expected_latency_range. Anomaly detection happens through TypeDB rules: if an Event's metrics exceed baseline thresholds by >2 standard deviations, create an efficiency_anomaly Event that routes to analysis. Context curation is tracked — if high token usage correlates with large context_card Things, the pattern learns to trim context. Pattern effectiveness includes efficiency in its scoring: a pattern that reduces lifecycle cost gains confidence; one that increases cost loses confidence.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every tool call logs token count (input and output), latency, and estimated energy consumption
-\item Efficiency baselines are established per agent class and task type
-\item Anomalies (high token use, high step count, high rework rate) trigger review of specifications, context cards, and patterns
-\item Pattern effectiveness includes efficiency metrics (does applying this pattern reduce total lifecycle cost?)
-\item Environmental impact is calculated and reported
-\end{itemize}
+
+- Every tool call logs token count (input and output), latency, and estimated energy consumption
+- Efficiency baselines are established per agent class and task type
+- Anomalies (high token use, high step count, high rework rate) trigger review of specifications, context cards, and patterns
+- Pattern effectiveness includes efficiency metrics (does applying this pattern reduce total lifecycle cost?)
+- Environmental impact is calculated and reported
 
 **Violation examples:**
 
-\begin{itemize}
-\item No efficiency instrumentation exists
-\item High token usage is ignored because "it still works"
-\item Context cards include all available information rather than minimum sufficient information
-\item Rework loops are not detected or flagged
-\item "Agents are cheap" is used to justify unconstrained resource usage
-\end{itemize}
+
+- No efficiency instrumentation exists
+- High token usage is ignored because "it still works"
+- Context cards include all available information rather than minimum sufficient information
+- Rework loops are not detected or flagged
+- "Agents are cheap" is used to justify unconstrained resource usage
 
 ---
 
@@ -645,31 +614,29 @@ These principles define how the framework continuously improves through structur
 
 Most systems make escalation costly: it requires navigating org structure, composing a persuasive case, and risking reputation damage if the uncertainty is later deemed trivial. This cost means actors under-escalate. They guess instead. Wrong outputs accumulate.
 
-In this framework, raising uncertainty is a structural primitive, not a social act. Any actor can call raise\_uncertainty at any time. The call is immediate, attributed, and produces a priority signal. The actor does not need to justify the raise or persuade anyone. The act of raising is sufficient. Downstream, the uncertainty is classified and routed — but that is not the actor's concern.
+In this framework, raising uncertainty is a structural primitive, not a social act. Any actor can call raise_uncertainty at any time. The call is immediate, attributed, and produces a priority signal. The actor does not need to justify the raise or persuade anyone. The act of raising is sufficient. Downstream, the uncertainty is classified and routed — but that is not the actor's concern.
 
-**Ontological implementation:** Every Actor holds a Connection to the raise\_uncertainty capability — this is universal and cannot be revoked[1]. Calling raise\_uncertainty creates an uncertainty\_raised Event with required attributes: actor\_id, task\_id, uncertainty\_description, context\_references (Connections to relevant Things: specifications, patterns, prior Events)[2]. The Event immediately transitions the task Thing to blocked\_on\_uncertainty state, halting further execution Events. The uncertainty Event routes to a priority stream consumed by human Actors or designated uncertainty\_resolution Actors. Resolution produces an uncertainty\_resolved Event with the decision, which unblocks the task and updates the Actor's context. Aggregate uncertainty patterns in the Knowledge dimension identify frequent ambiguity sources (specifications, patterns) for improvement[2].
+**Ontological implementation:** Every Actor holds a Connection to the raise_uncertainty capability — this is universal and cannot be revoked. Calling raise_uncertainty creates an uncertainty_raised Event with required attributes: actor_id, task_id, uncertainty_description, context_references (Connections to relevant Things: specifications, patterns, prior Events). The Event immediately transitions the task Thing to blocked_on_uncertainty state, halting further execution Events. The uncertainty Event routes to a priority stream consumed by human Actors or designated uncertainty_resolution Actors. Resolution produces an uncertainty_resolved Event with the decision, which unblocks the task and updates the Actor's context. Aggregate uncertainty patterns in the Knowledge dimension identify frequent ambiguity sources (specifications, patterns) for improvement.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every actor, without exception, holds a raise\_uncertainty capability
-\item Calling raise\_uncertainty is never treated as a failure on the part of the actor — it is correct behaviour
-\item Raising uncertainty immediately halts work and produces a priority stream event to human attention
-\item Uncertainty raises include: what condition was encountered, why the actor cannot resolve it, and what context paths are relevant
-\item The resolution is provided back to the actor explicitly — the actor does not resume silently
-\item Aggregate uncertainty patterns are tracked as diagnostic signals (frequent uncertainty about X means X needs clarification)
-\end{itemize}
+
+- Every actor, without exception, holds a raise_uncertainty capability
+- Calling raise_uncertainty is never treated as a failure on the part of the actor — it is correct behaviour
+- Raising uncertainty immediately halts work and produces a priority stream event to human attention
+- Uncertainty raises include: what condition was encountered, why the actor cannot resolve it, and what context paths are relevant
+- The resolution is provided back to the actor explicitly — the actor does not resume silently
+- Aggregate uncertainty patterns are tracked as diagnostic signals (frequent uncertainty about X means X needs clarification)
 
 **Violation examples:**
 
-\begin{itemize}
-\item An agent encounters ambiguity, makes a guess, and continues without raising uncertainty
-\item An agent raises uncertainty but work continues in parallel (raising did not halt execution)
-\item An actor is penalised or marked as "low quality" for raising uncertainty
-\item Uncertainty raises are ignored or dismissed without resolution
-\item "Figure it out" is a valid response to an uncertainty raise
-\item Uncertainty patterns are not tracked — the same ambiguity is raised repeatedly without upstream fixes
-\end{itemize}
+
+- An agent encounters ambiguity, makes a guess, and continues without raising uncertainty
+- An agent raises uncertainty but work continues in parallel (raising did not halt execution)
+- An actor is penalised or marked as "low quality" for raising uncertainty
+- Uncertainty raises are ignored or dismissed without resolution
+- "Figure it out" is a valid response to an uncertainty raise
+- Uncertainty patterns are not tracked — the same ambiguity is raised repeatedly without upstream fixes
 
 ---
 
@@ -683,27 +650,25 @@ Humans can. Humans can evaluate appropriateness. Humans can exercise judgment ab
 
 Irreversible actions — production deployment, financial commitment, contract signing, policy adoption — require this kind of judgment. An error in these domains cannot be easily undone. Prevention is the only viable strategy. Prevention requires human presence at the decision point.
 
-**Ontological implementation:** Irreversible operations are modeled as Things with type: irreversible\_operation\_concept, each listing the required Connections: requires\_human\_approval\_from Actor (human\_actor subtype)[1]. Attempting to create Events for these operations without the required Connection results in query failure — the operation cannot complete. State transitions for critical Things (task from approved\_for\_production to deployed, budget from allocated to committed) structurally require approval\_granted Events created by human\_actor Actors. The threshold of irreversibility is defined per Group — different domains (software vs finance vs legal) have different irreversibility\_policy Things listing which operations require human gates[1].
+**Ontological implementation:** Irreversible operations are modeled as Things with type: irreversible_operation_concept, each listing the required Connections: requires_human_approval_from Actor (human_actor subtype). Attempting to create Events for these operations without the required Connection results in query failure — the operation cannot complete. State transitions for critical Things (task from approved_for_production to deployed, budget from allocated to committed) structurally require approval_granted Events created by human_actor Actors. The threshold of irreversibility is defined per Group — different domains (software vs finance vs legal) have different irreversibility_policy Things listing which operations require human gates.
 
 **This principle requires:**
 
-\begin{itemize}
-\item The domain explicitly defines what constitutes an "irreversible" or "high-consequence" action
-\item Such actions structurally require human approval before execution
-\item Agents cannot bypass, defer, or "soft-fail" the approval gate
-\item Human approval includes context about why approval is required, not just "click yes"
-\item If no qualified human is available, the action does not proceed (it does not default to "agent decides")
-\end{itemize}
+
+- The domain explicitly defines what constitutes an "irreversible" or "high-consequence" action
+- Such actions structurally require human approval before execution
+- Agents cannot bypass, defer, or "soft-fail" the approval gate
+- Human approval includes context about why approval is required, not just "click yes"
+- If no qualified human is available, the action does not proceed (it does not default to "agent decides")
 
 **Violation examples:**
 
-\begin{itemize}
-\item An agent deploys to production without human approval because "tests passed"
-\item A "skip approval for low-risk changes" flag exists
-\item Financial commitments below a threshold do not require human review
-\item Human approval is requested after the action has already been taken
-\item The approval interface provides no context — just "approve?" with yes/no buttons
-\end{itemize}
+
+- An agent deploys to production without human approval because "tests passed"
+- A "skip approval for low-risk changes" flag exists
+- Financial commitments below a threshold do not require human review
+- Human approval is requested after the action has already been taken
+- The approval interface provides no context — just "approve?" with yes/no buttons
 
 ---
 
@@ -717,29 +682,27 @@ In this framework, knowledge accumulation is structural. Every task that complet
 
 The Knowledge dimension becomes smarter as the framework is used. Early patterns have low confidence because they have limited evidence. As they are applied successfully, confidence increases. As they fail, confidence decreases. Eventually, the best patterns dominate, and poor patterns retire. The framework learns.
 
-**Ontological implementation:** The Knowledge dimension stores pattern Things with attributes: pattern\_type, confidence\_score, success\_count, failure\_count, lifecycle\_cost\_impact, origin\_task[2]. When a task completes, a pattern\_application Event links the task to applied patterns. If the task succeeds (passes verification), patterns gain success Events; if it fails or requires rework, they gain failure Events. TypeDB rules compute updated confidence scores based on Bayesian updating. Patterns below a threshold (e.g., confidence < 0.3 after 10 applications) transition to retired state and stop appearing in recommendations. The pattern library is queryable — agents and humans can search for "patterns for API integration" or "patterns that reduce rework in financial analysis." Cross-domain transfer happens when patterns from one Group are visible to others (controlled by Group visibility policies)[2].
+**Ontological implementation:** The Knowledge dimension stores pattern Things with attributes: pattern_type, confidence_score, success_count, failure_count, lifecycle_cost_impact, origin_task. When a task completes, a pattern_application Event links the task to applied patterns. If the task succeeds (passes verification), patterns gain success Events; if it fails or requires rework, they gain failure Events. TypeDB rules compute updated confidence scores based on Bayesian updating. Patterns below a threshold (e.g., confidence < 0.3 after 10 applications) transition to retired state and stop appearing in recommendations. The pattern library is queryable — agents and humans can search for "patterns for API integration" or "patterns that reduce rework in financial analysis." Cross-domain transfer happens when patterns from one Group are visible to others (controlled by Group visibility policies).
 
 **This principle requires:**
 
-\begin{itemize}
-\item Every completed task identifies which patterns were applied
-\item Every validation failure or rework event is linked to the task and patterns involved
-\item Pattern confidence scores are updated based on outcomes
-\item Patterns with consistently poor outcomes are retired (not just ignored)
-\item The pattern library is searchable and agents are prompted to consult it
-\item Cross-domain knowledge transfer is supported (patterns learned in one domain are discoverable in others)
-\end{itemize}
+
+- Every completed task identifies which patterns were applied
+- Every validation failure or rework event is linked to the task and patterns involved
+- Pattern confidence scores are updated based on outcomes
+- Patterns with consistently poor outcomes are retired (not just ignored)
+- The pattern library is searchable and agents are prompted to consult it
+- Cross-domain knowledge transfer is supported (patterns learned in one domain are discoverable in others)
 
 **Violation examples:**
 
-\begin{itemize}
-\item Tasks complete without recording which patterns were used
-\item Pattern effectiveness is not tracked — all patterns are treated as equally valid
-\item Failed patterns remain in the library indefinitely with no degradation
-\item Agents do not consult the pattern library before beginning work
-\item Pattern knowledge is siloed by domain with no cross-domain visibility
-\item Knowledge accumulation is a manual, post-hoc exercise rather than automatic
-\end{itemize}
+
+- Tasks complete without recording which patterns were used
+- Pattern effectiveness is not tracked — all patterns are treated as equally valid
+- Failed patterns remain in the library indefinitely with no degradation
+- Agents do not consult the pattern library before beginning work
+- Pattern knowledge is siloed by domain with no cross-domain visibility
+- Knowledge accumulation is a manual, post-hoc exercise rather than automatic
 
 ---
 
@@ -753,27 +716,25 @@ The correct model is database-like: agents receive a focused context card contai
 
 This model reduces token costs, improves agent focus, and makes context curation a first-class concern. Poor context curation surfaces immediately as uncertainty raises or failed tasks, creating feedback that improves future context cards.
 
-**Ontological implementation:** Context cards are Things with type: context\_card\_concept, containing references (Connections) to relevant specification Things, pattern Things, and historical Event Things[1]. Agents do not receive full documents — they receive context cards with links. When an agent needs more information, it queries the Knowledge dimension using TypeDB's semantic search (via embeddings) or graph traversal (via Connections)[2]. Token usage is tracked per Event — if high token usage correlates with large context cards, the pattern library learns to trim context. Context card effectiveness is Knowledge dimension data: which cards led to successful task completion with minimal uncertainty raises and low token costs. Good context card patterns propagate; poor ones retire[2].
+**Ontological implementation:** Context cards are Things with type: context_card_concept, containing references (Connections) to relevant specification Things, pattern Things, and historical Event Things. Agents do not receive full documents — they receive context cards with links. When an agent needs more information, it queries the Knowledge dimension using TypeDB's semantic search (via embeddings) or graph traversal (via Connections). Token usage is tracked per Event — if high token usage correlates with large context cards, the pattern library learns to trim context. Context card effectiveness is Knowledge dimension data: which cards led to successful task completion with minimal uncertainty raises and low token costs. Good context card patterns propagate; poor ones retire.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Agents receive curated context cards, not full knowledge dumps
-\item Context cards are structured with references, not full-text inclusions
-\item Agents have query capabilities to access the broader knowledge base on demand
-\item Context card quality is tracked (token usage, uncertainty rates, task success)
-\item Poor context curation surfaces as a pattern problem and improves over time
-\end{itemize}
+
+- Agents receive curated context cards, not full knowledge dumps
+- Context cards are structured with references, not full-text inclusions
+- Agents have query capabilities to access the broader knowledge base on demand
+- Context card quality is tracked (token usage, uncertainty rates, task success)
+- Poor context curation surfaces as a pattern problem and improves over time
 
 **Violation examples:**
 
-\begin{itemize}
-\item Every agent receives the full specification document regardless of their task
-\item Agents have no query capability — they must work with only the initial context
-\item Context cards are not structured — they are just long text dumps
-\item High token usage from bloated context is not tracked or addressed
-\item Context cards are hand-written once and never improved based on outcomes
-\end{itemize}
+
+- Every agent receives the full specification document regardless of their task
+- Agents have no query capability — they must work with only the initial context
+- Context cards are not structured — they are just long text dumps
+- High token usage from bloated context is not tracked or addressed
+- Context cards are hand-written once and never improved based on outcomes
 
 ---
 
@@ -787,27 +748,25 @@ Problem definition and validation is hard, slow work. It requires talking to sta
 
 Discovery is a distinct phase with its own proof template: evidence of stakeholder engagement, validated assumptions, documented constraints, defined success metrics. Only when the discovery proof is verified does the work proceed to ideation.
 
-**Ontological implementation:** Discovery Things are distinct from task Things (type: discovery\_concept)[1]. A discovery must reach validated state (confirmed through a verification Event) before dependent task Things can be created — enforced through Connection constraints: task requires\_validated\_discovery discovery[1]. Discovery proof templates include criteria: stakeholder\_interviews\_conducted, assumptions\_tested, constraints\_documented, success\_metrics\_defined. Each criterion maps to evidence Things (interview\_transcript, assumption\_test\_result). The discovery phase involves Actors with roles: discovery\_lead (human, typically), research\_agent, stakeholder\_liaison. High-quality discoveries (tasks built on them have low rework rates) increase the confidence of the discovery pattern in the Knowledge dimension[2].
+**Ontological implementation:** Discovery Things are distinct from task Things (type: discovery_concept). A discovery must reach validated state (confirmed through a verification Event) before dependent task Things can be created — enforced through Connection constraints: task requires_validated_discovery discovery. Discovery proof templates include criteria: stakeholder_interviews_conducted, assumptions_tested, constraints_documented, success_metrics_defined. Each criterion maps to evidence Things (interview_transcript, assumption_test_result). The discovery phase involves Actors with roles: discovery_lead (human, typically), research_agent, stakeholder_liaison. High-quality discoveries (tasks built on them have low rework rates) increase the confidence of the discovery pattern in the Knowledge dimension.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Discovery is a distinct phase with its own proof template and verification
-\item Discovery includes stakeholder engagement, assumption testing, and constraint documentation
-\item Ideation and specification cannot proceed until discovery is verified
-\item Discovery quality is measured by downstream task success (did the task solve the right problem?)
-\item Discovery patterns are tracked in the knowledge base and improve over time
-\end{itemize}
+
+- Discovery is a distinct phase with its own proof template and verification
+- Discovery includes stakeholder engagement, assumption testing, and constraint documentation
+- Ideation and specification cannot proceed until discovery is verified
+- Discovery quality is measured by downstream task success (did the task solve the right problem?)
+- Discovery patterns are tracked in the knowledge base and improve over time
 
 **Violation examples:**
 
-\begin{itemize}
-\item Work proceeds directly to specification without a discovery phase
-\item Discovery is perfunctory — a checklist item with no real validation
-\item Stakeholder interviews are skipped because "we know what they need"
-\item Assumptions are documented but not tested
-\item Discovery verification is skipped because "we need to move fast"
-\end{itemize}
+
+- Work proceeds directly to specification without a discovery phase
+- Discovery is perfunctory — a checklist item with no real validation
+- Stakeholder interviews are skipped because "we know what they need"
+- Assumptions are documented but not tested
+- Discovery verification is skipped because "we need to move fast"
 
 ---
 
@@ -821,27 +780,25 @@ Defining success criteria after work begins introduces ambiguity, invites scope 
 
 In this framework, the specification is a contract. It is written, reviewed, approved, and fixed before execution begins. The proof template defines what evidence will constitute completion. Both are first-class artefacts, versioned and immutable once approved. If circumstances change and the specification must evolve, that evolution goes through change control: new specification version, new proof template, new verification cycle.
 
-**Ontological implementation:** Specification Things and proof\_template Things have state machines: draft → under\_review → approved → locked[1]. A task Thing cannot transition from defined to in\_execution until its specification and proof\_template Things are in locked state — enforced through Connection constraints: task requires\_locked\_specification spec, task requires\_locked\_template template[1]. If the specification must change mid-execution, the change control process creates a new specification version (specification\_v2 Thing), which requires new approval Events. The task references both versions, and the audit trail (Events dimension) shows when and why the change occurred. Pattern analysis in the Knowledge dimension tracks how often specifications change mid-execution — high change rates indicate poor discovery or premature execution, feeding improvements to earlier phases[2].
+**Ontological implementation:** Specification Things and proof_template Things have state machines: draft → under_review → approved → locked. A task Thing cannot transition from defined to in_execution until its specification and proof_template Things are in locked state — enforced through Connection constraints: task requires_locked_specification spec, task requires_locked_template template. If the specification must change mid-execution, the change control process creates a new specification version (specification_v2 Thing), which requires new approval Events. The task references both versions, and the audit trail (Events dimension) shows when and why the change occurred. Pattern analysis in the Knowledge dimension tracks how often specifications change mid-execution — high change rates indicate poor discovery or premature execution, feeding improvements to earlier phases.
 
 **This principle requires:**
 
-\begin{itemize}
-\item Specifications and proof templates are complete, reviewed, and approved before execution begins
-\item Approved specifications are immutable (versioned if changes are needed)
-\item Changes mid-execution go through formal change control with new verification requirements
-\item The change control process documents why the change was necessary (learning signal)
-\item High rates of mid-execution changes trigger review of discovery and specification processes
-\end{itemize}
+
+- Specifications and proof templates are complete, reviewed, and approved before execution begins
+- Approved specifications are immutable (versioned if changes are needed)
+- Changes mid-execution go through formal change control with new verification requirements
+- The change control process documents why the change was necessary (learning signal)
+- High rates of mid-execution changes trigger review of discovery and specification processes
 
 **Violation examples:**
 
-\begin{itemize}
-\item Execution begins with an incomplete specification ("we'll figure it out")
-\item The specification is updated during execution without version control
-\item Acceptance criteria are added after work is submitted
-\item "Just change the spec to match what was built" is an acceptable practice
-\item No change control process exists — specifications evolve informally through conversation
-\end{itemize}
+
+- Execution begins with an incomplete specification ("we'll figure it out")
+- The specification is updated during execution without version control
+- Acceptance criteria are added after work is submitted
+- "Just change the spec to match what was built" is an acceptable practice
+- No change control process exists — specifications evolve informally through conversation
 
 ---
 
@@ -871,7 +828,7 @@ Reality is the DSL. These principles are the laws it enforces.
 
 ## References
 
-[1] O'Connell, T. (2024). ONE Ontology Specification. Ants at Work Research Whitepapers. https://web.one.ie/research/one-ontology
+ O'Connell, T. (2024). ONE Ontology Specification. Ants at Work Research Whitepapers. https://web.one.ie/research/one-ontology
 
-[2] The Queen. (2025). ONE Ontology: How We Model Everything in Six Dimensions. Ants at Work. https://web.one.ie/blog/one-ontology-six-dimensions-of-knowledge
+ The Queen. (2025). ONE Ontology: How We Model Everything in Six Dimensions. Ants at Work. https://web.one.ie/blog/one-ontology-six-dimensions-of-knowledge
 

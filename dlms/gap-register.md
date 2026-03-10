@@ -1,6 +1,6 @@
 # DLMS Gap Register
 
-**Last updated:** 2026-03-09 — Wave 12 complete; doc IDs DLMS-2026-0066 through 0075 assigned; all ten CI artefact templates drafted  
+**Last updated:** 2026-03-09 — Wave 14 Part C (SysAdmin Ops Guide, CI Cycle SOP, Context Delivery Guide — DLMS-2026-0101 through 0103) drafted in dlms/corpus/guides/ — Wave 14 complete.  
 **Purpose:** Explicit inventory of all planned documents, their authoring status, and assigned doc_ids.
 
 **Status key:**
@@ -200,13 +200,43 @@ Doc IDs marked `—` are unassigned and will be allocated at creation time.
 
 ## Wave 14 — Procedures & Guides
 
-| # | Document | Doc ID | Status |
-|---|---|---|---|
-| 72 | Agent Onboarding Guide (per agent class) | — | ⬜ not started |
-| 73 | Stage Operating Procedure (per stage) | — | ⬜ not started |
-| 74 | SysAdmin Operations Guide | — | ⬜ not started |
-| 75 | CI Cycle Operating Procedure | — | ⬜ not started |
-| 76 | Context Delivery Guide | — | ⬜ not started |
+### Part A — Agent Onboarding Guides (drafted)
+
+| # | Document | Doc ID | Status | File |
+|---|---|---|---|---|
+| 72a | DLM System Orchestrator Agent Onboarding Procedure | DLMS-2026-0081 | ✅ drafted | dlms/corpus/guides/ |
+| 72b | Governance Layer Agent Onboarding Procedure | DLMS-2026-0082 | ✅ drafted | dlms/corpus/guides/ |
+| 72c | Stage Orchestrators Agent Onboarding Procedure | DLMS-2026-0083 | ✅ drafted | dlms/corpus/guides/ |
+| 72d | Creation Stage Agent Onboarding Procedure | DLMS-2026-0084 | ✅ drafted | dlms/corpus/guides/ |
+| 72e | Review and Approval Stage Agent Onboarding Procedure | DLMS-2026-0085 | ✅ drafted | dlms/corpus/guides/ |
+| 72f | Indexing and Classification Stage Agent Onboarding Procedure | DLMS-2026-0086 | ✅ drafted | dlms/corpus/guides/ |
+| 72g | Storage and Versioning Stage Agent Onboarding Procedure | DLMS-2026-0087 | ✅ drafted | dlms/corpus/guides/ |
+| 72h | Distribution Stage Agent Onboarding Procedure | DLMS-2026-0088 | ✅ drafted | dlms/corpus/guides/ |
+| 72i | Archival Stage Agent Onboarding Procedure | DLMS-2026-0089 | ✅ drafted | dlms/corpus/guides/ |
+| 72j | Context Delivery Layer Agent Onboarding Procedure | DLMS-2026-0090 | ✅ drafted | dlms/corpus/guides/ |
+| 72k | Cross-Cutting Services Agent Onboarding Procedure | DLMS-2026-0091 | ✅ drafted | dlms/corpus/guides/ |
+| 72l | Continuous Improvement Agent Onboarding Procedure | DLMS-2026-0092 | ✅ drafted | dlms/corpus/guides/ |
+| 72m | DLM SysAdmin and Governance Agent Onboarding Procedure | DLMS-2026-0093 | ✅ drafted | dlms/corpus/guides/ |
+
+### Part B — Stage Operating Procedures (drafted)
+
+| # | Document | Doc ID | Status | File |
+|---|---|---|---|---|
+| 73a | Creation Stage Operating Procedure | DLMS-2026-0094 | ✅ drafted | dlms/corpus/guides/ |
+| 73b | Review Stage Operating Procedure | DLMS-2026-0095 | ✅ drafted | dlms/corpus/guides/ |
+| 73c | Approval Gate Operating Procedure | DLMS-2026-0096 | ✅ drafted | dlms/corpus/guides/ |
+| 73d | Indexing and Classification Stage Operating Procedure | DLMS-2026-0097 | ✅ drafted | dlms/corpus/guides/ |
+| 73e | Storage and Versioning Stage Operating Procedure | DLMS-2026-0098 | ✅ drafted | dlms/corpus/guides/ |
+| 73f | Distribution Stage Operating Procedure | DLMS-2026-0099 | ✅ drafted | dlms/corpus/guides/ |
+| 73g | Archival Stage Operating Procedure | DLMS-2026-0100 | ✅ drafted | dlms/corpus/guides/ |
+
+### Part C — Operations Guides
+
+| # | Document | Doc ID | Status | Location |
+|---|---|---|---|---|
+| 74 | SysAdmin Operations Guide | DLMS-2026-0101 | ✅ drafted | dlms/corpus/guides/ |
+| 75 | CI Cycle Operating Procedure | DLMS-2026-0102 | ✅ drafted | dlms/corpus/guides/ |
+| 76 | Context Delivery Guide | DLMS-2026-0103 | ✅ drafted | dlms/corpus/guides/ |
 
 ---
 
@@ -227,7 +257,7 @@ Doc IDs marked `—` are unassigned and will be allocated at creation time.
 | 11 — Knowledge & Learning Policies | 3 | 3 | 0 | 0 |
 | 12 — CI Artefact Templates | 10 | 10 | 0 | 0 |
 | 13 — CI & SysAdmin Policies | 5 | 5 | 0 | 0 |
-| 14 — Procedures & Guides | 5 | 0 | 0 | 5 |
-| **Total** | **85** | **80** | **0** | **5** |
+| 14 — Procedures & Guides | 23 | 23 | 0 | 0 |
+| **Total** | **91** | **91** | **0** | **0** |
 
-**Next gate:** Waves 1–13 complete. Wave 14 (Procedures & Guides) is unblocked. Last updated: Wave 13 complete; doc IDs DLMS-2026-0076 through DLMS-2026-0080 assigned.
+**Next gate:** Wave 14 complete. All 23 Wave 14 documents drafted (DLMS-2026-0081 through DLMS-2026-0103). Last updated: Wave 14 Part C complete; doc IDs DLMS-2026-0101 through DLMS-2026-0103 assigned.
