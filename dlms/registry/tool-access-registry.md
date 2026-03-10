@@ -1,7 +1,7 @@
 # Tool Access Registry
 
 **Registry ID:** TAR-001  
-**Version:** 0.3.0  
+**Version:** 0.3.1  
 **Status:** draft  
 **Last updated:** 2026-03-10  
 **Governed by:** platform-constraints.md (OCAP model)  
@@ -22,8 +22,8 @@ The MCP Gateway validates every incoming tool call against this registry before 
 | tool_name | permitted_agent_roles | r/w | scope_constraint |
 |---|---|---|---|
 | `audit_append_event` | `audit-trail-agent` | W | Append-only. No reads. `event_type` must match Event Type Registry. |
-| `knowledge.readEntry` | `context-curator-creation`, `context-curator-review`, `context-curator-indexing`, `context-curator-storage`, `context-curator-distribution`, `context-curator-archival`, `context-compressor` | R | Filter by `subject_doc_type` + `subject_stage` only. |
-| `knowledge.writeEntry` | `creation-verifier`, `review-verifier`, `indexing-verifier`, `storage-verifier`, `distribution-verifier`, `archival-verifier`, `ci-verifier` | W | Stage verifiers only. |
+| `knowledge.readEntry` | `context-curator-creation`, `context-curator-review`, `context-curator-indexing`, `context-curator-storage`, `context-curator-distribution`, `context-curator-archival`, `context-compressor`, `infra-context-curator` | R | Filter by `subject_doc_type` + `subject_stage` only; `infra-context-curator` filters by `phase_id`. |
+| `knowledge.writeEntry` | `creation-verifier`, `review-verifier`, `indexing-verifier`, `storage-verifier`, `distribution-verifier`, `archival-verifier`, `ci-verifier`, `infra-verifier`, `infra-knowledge-curator` | W | Stage verifiers and Tier 15 infra agents only. |
 | `relationship.queryDependencies` | `dependency-index-agent`, `completeness-validator`, `system-orchestrator` | R | Depth-limited traversal. No writes. |
 | `relationship.upsertDependency` | `dependency-index-updater` | W | Tier 7 (Indexing) only. Must supply `rel` value from controlled vocabulary. |
 
@@ -236,6 +236,7 @@ These tools are exposed on the nexus-external server only. They are not availabl
 
 | Version | Date | Author | Note |
 |---|---|---|---|
+| 0.3.1 | 2026-03-10 | agent:infra-executor | Added `infra-context-curator` to `knowledge.readEntry` permitted roles; added `infra-verifier` and `infra-knowledge-curator` to `knowledge.writeEntry` permitted roles; updated scope constraints; found during Phase D validation (infra_work_item: phase-0) |
 | 0.3.0 | 2026-03-10 | bootstrap:design-team | Added `infra.writeDraftDoD` and `infra.synthesizeDoD` tools for multi-perspective DoD pipeline; extended `infra.readContext` and `dod.getTemplate` permitted roles; updated `infra.writeDoD` scope constraint; per DLMS-2026-0107 |
 | 0.2.0 | 2026-03-10 | bootstrap:design-team | Added Tier 15 tool section (10 tools); added `infra-metrics-agent` to `sysadmin.readAuditEvents` permitted roles |
 | 0.1.0 | 2026-03-09 | seed:design-team | Initial registry — all tools across Tiers 1–14 |
