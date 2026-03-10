@@ -1,6 +1,6 @@
 # DLMS Corpus Index
 
-**Last updated:** 2026-03-09 — Wave 14 complete (103 documents).  
+**Last updated:** 2026-03-10 — DLMS-2026-0107 added (107 documents).  
 **Purpose:** Authoritative index of all corpus documents with current file paths, categorised by tier.
 
 **Path key:** All paths are relative to the workspace root (`/dlms/`).
@@ -225,3 +225,14 @@ Shared artefact templates produced or consumed by multiple stages.
 | DLMS-2026-0080 | 0.1.0 | SysAdmin Escalation Policy | policy | corpus/policies/DLMS-2026-0080-v0.1.0.md |
 | DLMS-2026-0093 | 0.1.0 | DLM SysAdmin and Governance Agent Onboarding Procedure | procedure | corpus/guides/DLMS-2026-0093-v0.1.0.md |
 | DLMS-2026-0101 | 0.1.0 | SysAdmin Operations Guide | procedure | corpus/guides/DLMS-2026-0101-v0.1.0.md |
+
+---
+
+## Tier 15 — Nexus Infrastructure
+
+| doc_id | ver | Title | doc_type | Path |
+|---|---|---|---|---|
+| DLMS-2026-0104 | 0.1.0 | Nexus Infrastructure Agent Governance Policy | policy | corpus/policies/DLMS-2026-0104-v0.1.0.md |
+| DLMS-2026-0105 | 0.1.0 | Tier 15 Agent Roster — Nexus Infrastructure Team | reference | corpus/policies/DLMS-2026-0105-v0.1.0.md |
+| DLMS-2026-0106 | 0.1.1 | Nexus Infrastructure Agent Template (TMPL-nexus-infra-001) | template | corpus/templates/DLMS-2026-0106-v0.1.0.md |
+| DLMS-2026-0107 | 0.1.0 | High-Stakes Work Classification and Multi-Perspective Definition of Done Policy | policy | corpus/policies/DLMS-2026-0107-v0.1.0.md |

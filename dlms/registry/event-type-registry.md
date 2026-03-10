@@ -1,9 +1,9 @@
 # Event Type Registry
 
 **Registry ID:** ETR-001  
-**Version:** 0.1.0  
+**Version:** 0.3.0  
 **Status:** draft  
-**Last updated:** 2026-03-09  
+**Last updated:** 2026-03-10  
 **Governed by:** DLMS-2026-0015 (Audit Trail Policy)  
 **Consumed by:** `nexus/src/tools/shared/audit.ts`, `nexus/src/tools/shared/gateway.ts`
 
@@ -46,6 +46,16 @@ All `event_type` values in the DLMS audit trail must appear in this registry. An
 | `ci_cycle_complete` | CI Verifier confirmed all CI artefacts present for `cycleId` | Tier 13 | `agent:ci-verifier` |
 | `config_updated` | System configuration changed by Configuration Controller following a change directive | Tier 14 | `agent:configuration-controller` |
 | `governance_doc_read` | Governance document read by SysAdmin tier agent | Tier 14 | `agent:dlm-sysadmin-agent`, `agent:policy-manager`, `agent:sla-manager`, `agent:guide-curator`, `agent:sysadmin-activity-monitor` |
+| `nexus_phase_started` | Nexus Infrastructure Orchestrator has begun routing an infra_work_item for a phase or maintenance task | Tier 15 | `agent:nexus-infra-orchestrator` |
+| `nexus_phase_completed` | Infra Verifier issued VERIFIED for the phase; Orchestrator confirmed pipeline complete | Tier 15 | `agent:nexus-infra-orchestrator` |
+| `nexus_phase_failed` | Pipeline halted at a gate failure; infra-routing-instructions written with status: FAILED | Tier 15 | `agent:nexus-infra-orchestrator` |
+| `infra_plan_created` | Infra Planner produced infra-plan-[phase].md with populated rollback_procedure | Tier 15 | `agent:infra-planner` |
+| `infra_dod_draft_created` | A DoD author agent (Completeness, Adversarial, or Efficiency orientation) produced a draft DoD artefact for synthesis | Tier 15 | `agent:infra-dod-author-completeness`, `agent:infra-dod-author-adversarial`, `agent:infra-dod-author-efficiency` |
+| `infra_dod_created` | Infra DoD Agent (RC-standard) or Infra DoD Synthesizer (RC-high-impact+) produced the canonical infra-dod-[phase].md before Executor was invoked | Tier 15 | `agent:infra-dod-agent`, `agent:infra-dod-synthesizer` |
+| `infra_implementation_completed` | Infra Executor completed all tasks declared in infra-plan; output artefact written | Tier 15 | `agent:infra-executor` |
+| `infra_review_submitted` | One of the two parallel reviewers (Code or Architecture) submitted their review artefact | Tier 15 | `agent:infra-code-reviewer`, `agent:infra-architecture-reviewer` |
+| `infra_verified` | Infra Verifier confirmed all infra_dod criteria satisfied; VERIFIED result written | Tier 15 | `agent:infra-verifier` |
+| `infra_verification_failed` | Infra Verifier found one or more infra_dod criteria unsatisfied; FAILED result written | Tier 15 | `agent:infra-verifier` |
 
 ---
 
@@ -63,4 +73,6 @@ All `event_type` values in the DLMS audit trail must appear in this registry. An
 
 | Version | Date | Author | Note |
 |---|---|---|---|
+| 0.3.0 | 2026-03-10 | bootstrap:design-team | Added `infra_dod_draft_created` event type for parallel DoD author agents; updated `infra_dod_created` to include `infra-dod-synthesizer` as valid actor |
+| 0.2.0 | 2026-03-10 | bootstrap:design-team | Added 9 Tier 15 infra event types (nexus_phase_started through infra_verification_failed) |
 | 0.1.0 | 2026-03-09 | seed:design-team | Initial registry — 31 event types covering all 14 tiers |

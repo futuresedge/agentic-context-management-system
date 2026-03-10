@@ -9,22 +9,25 @@
   "servers": {
     "nexus-internal": {
       "type": "stdio",
-      "command": "node",
-      "args": ["${workspaceFolder}/nexus/dist/server.js"],
+      "command": "pnpm",
+      "args": ["--filter", "nexus", "tsx", "src/server.ts"],
       "env": {
         "TYPEDB_URL": "${input:TYPEDB_URL}",
         "NEXUS_ROLE": "internal"
-      }
+      },
+      "disabled": true,
+      "_enable_after": "Phase 2 complete — infra_verified event written to nexus/.infra/audit-trail.md. Implements gateway, audit infrastructure, stage gate, and audit_append_event tool."
     },
     "nexus-external": {
       "type": "stdio",
-      "command": "node",
-      "args": ["${workspaceFolder}/nexus/dist/server.js"],
+      "command": "pnpm",
+      "args": ["--filter", "nexus", "tsx", "src/server-external.ts"],
       "env": {
         "TYPEDB_URL": "${input:TYPEDB_URL}",
         "NEXUS_ROLE": "external"
       },
-      "disabled": true
+      "disabled": true,
+      "_enable_after": "Phase 9 complete — infra_verified event written for phase-9. Exposes Tier 11 context-delivery tools only."
     },
     "typedb": {
       "url": "http://localhost:8001/mcp"
