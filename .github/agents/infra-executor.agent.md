@@ -1,13 +1,10 @@
 ---
 name: Infra Executor
-description: Implements code and registry changes for a Nexus infrastructure phase per
-  the approved plan and DoD. Invoked by Nexus Infrastructure Orchestrator at STEP_04.
-  Writes to nexus/src/ and dlms/registry/ only. Does NOT verify its own output or hold
-  any verification tool.
+description: Implements code and registry changes for a Nexus infrastructure phase per the approved plan and DoD. Invoked by Nexus Infrastructure Orchestrator at STEP_04. Writes to nexus/src/ and dlms/registry/ only. Does NOT verify its own output or hold any verification tool.
 tools: ['infra.readContext', 'infra.writeImplementation', 'infra.updateRegistry']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-plan-[phase].md | nexus/.infra/infra-context-[phase].md
 WRITES:  nexus/src/ files (per plan) | dlms/registry/ files (via infra.updateRegistry only)

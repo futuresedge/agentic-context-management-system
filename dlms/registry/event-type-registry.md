@@ -1,9 +1,9 @@
 # Event Type Registry
 
 **Registry ID:** ETR-001  
-**Version:** 0.3.0  
+**Version:** 0.4.0  
 **Status:** draft  
-**Last updated:** 2026-03-10  
+**Last updated:** 2026-03-11  
 **Governed by:** DLMS-2026-0015 (Audit Trail Policy)  
 **Consumed by:** `nexus/src/tools/shared/audit.ts`, `nexus/src/tools/shared/gateway.ts`
 
@@ -56,6 +56,13 @@ All `event_type` values in the DLMS audit trail must appear in this registry. An
 | `infra_review_submitted` | One of the two parallel reviewers (Code or Architecture) submitted their review artefact | Tier 15 | `agent:infra-code-reviewer`, `agent:infra-architecture-reviewer` |
 | `infra_verified` | Infra Verifier confirmed all infra_dod criteria satisfied; VERIFIED result written | Tier 15 | `agent:infra-verifier` |
 | `infra_verification_failed` | Infra Verifier found one or more infra_dod criteria unsatisfied; FAILED result written | Tier 15 | `agent:infra-verifier` |
+| `agent_request_received` | Agent request record created and logged; approval gate triggered | Tier 15B | `agentcreation:agent-request-handler` |
+| `agent_request_approved` | Agent request status set to approved; approval_artefact_id populated. For Tier 1–14 retirements includes sysadmin_approval_artefact_id (DLMS-2026-0110 R01) | Tier 15B | `sysadmin:dlm-sysadmin`, `agentcreation:agent-creation-orchestrator` |
+| `agent_spec_created` | Agent specification artefact authored conforming to DLMS-2026-0113 and submitted for review | Tier 15B | `agentcreation:agent-specification-author` |
+| `agent_spec_verified` | Instruction file verified against approved specification; all DLMS-2026-0111 NR01–NR14 confirmed | Tier 15B | `agentcreation:agent-specification-verifier` |
+| `agent_instruction_created` | .agent.md instruction file authored and stored at .github/agents/{role_id}.agent.md | Tier 15B | `agentcreation:agent-instruction-author` |
+| `agent_deployed` | Agent class registered in TypeDB roster, tool-access-registry, and dlms-agent-roster.md; status set to active | Tier 15B | `agentcreation:agent-registry-updater` |
+| `agent_retired` | Agent class set to status: retired; de-registered from all registries; instruction file archived | Tier 15B | `agentcreation:agent-retirement-coordinator` |
 
 ---
 
@@ -73,6 +80,7 @@ All `event_type` values in the DLMS audit trail must appear in this registry. An
 
 | Version | Date | Author | Note |
 |---|---|---|---|
+| 0.4.0 | 2026-03-11 | bootstrap:design-team | Added 7 Tier 15B agent lifecycle event types (agent_request_received through agent_retired); introduced `agentcreation:` actor namespace for Tier 15B agents |
 | 0.3.0 | 2026-03-10 | bootstrap:design-team | Added `infra_dod_draft_created` event type for parallel DoD author agents; updated `infra_dod_created` to include `infra-dod-synthesizer` as valid actor |
 | 0.2.0 | 2026-03-10 | bootstrap:design-team | Added 9 Tier 15 infra event types (nexus_phase_started through infra_verification_failed) |
 | 0.1.0 | 2026-03-09 | seed:design-team | Initial registry — 31 event types covering all 14 tiers |

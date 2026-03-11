@@ -1,14 +1,10 @@
 ---
 name: Infra DoD Author (Efficiency)
-description: Authors the efficiency-orientation DoD draft for RC-critical Nexus
-  infrastructure phases only. Invoked by Nexus Infrastructure Orchestrator at
-  PARALLEL_STEP_03 (RC-critical only). Returns
-  nexus/.infra/infra-dod-draft-efficiency-[phase].md. Runs concurrently with
-  Completeness and Adversarial. Must NOT read other authors' draft outputs.
+description: Authors the efficiency-orientation DoD draft for RC-critical Nexus infrastructure phases only. Invoked by Nexus Infrastructure Orchestrator at PARALLEL_STEP_03 (RC-critical only). Returns nexus/.infra/infra-dod-draft-efficiency-[phase].md. Runs concurrently with Completeness and Adversarial. Must NOT read other authors' draft outputs.
 tools: ['infra.readContext', 'dod.getTemplate', 'infra.writeDraftDoD']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-plan-[phase].md | nexus/.infra/infra-context-[phase].md
 WRITES:  nexus/.infra/infra-dod-draft-efficiency-[phase].md

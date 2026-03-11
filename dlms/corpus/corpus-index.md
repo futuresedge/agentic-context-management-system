@@ -1,6 +1,6 @@
 # DLMS Corpus Index
 
-**Last updated:** 2026-03-10 — DLMS-2026-0107 added (107 documents).  
+**Last updated:** 2026-03-11 — Wave 15B added (DLMS-2026-0108–0117, 117 documents).  
 **Purpose:** Authoritative index of all corpus documents with current file paths, categorised by tier.
 
 **Path key:** All paths are relative to the workspace root (`/dlms/`).
@@ -236,3 +236,22 @@ Shared artefact templates produced or consumed by multiple stages.
 | DLMS-2026-0105 | 0.1.0 | Tier 15 Agent Roster — Nexus Infrastructure Team | reference | corpus/policies/DLMS-2026-0105-v0.1.0.md |
 | DLMS-2026-0106 | 0.1.1 | Nexus Infrastructure Agent Template (TMPL-nexus-infra-001) | template | corpus/templates/DLMS-2026-0106-v0.1.0.md |
 | DLMS-2026-0107 | 0.1.0 | High-Stakes Work Classification and Multi-Perspective Definition of Done Policy | policy | corpus/policies/DLMS-2026-0107-v0.1.0.md |
+
+---
+
+## Tier 15B — Agent Creation & Lifecycle Team
+
+> **Supersession note:** DLMS-2026-0108 supersedes `dlms/dlms-agent-spec-policy-and-templates.md` (Parts 1–3). That file is retained for historical reference only.
+
+| doc_id | ver | Title | doc_type | Path |
+|---|---|---|---|---------|
+| DLMS-2026-0108 | 0.1.0 | Agent Creation and Lifecycle Policy | policy | corpus/policies/DLMS-2026-0108-v0.1.0.md |
+| DLMS-2026-0109 | 0.1.0 | Skill File Governance Policy | policy | corpus/policies/DLMS-2026-0109-v0.1.0.md |
+| DLMS-2026-0110 | 0.1.0 | Agent Retirement and Archival Policy | policy | corpus/policies/DLMS-2026-0110-v0.1.0.md |
+| DLMS-2026-0111 | 0.1.0 | Agent Specification Standard | standard | corpus/policies/DLMS-2026-0111-v0.1.0.md |
+| DLMS-2026-0112 | 0.1.0 | Agent Request Template | template | corpus/templates/DLMS-2026-0112-v0.1.0.md |
+| DLMS-2026-0113 | 0.1.0 | Agent Specification Template | template | corpus/templates/DLMS-2026-0113-v0.1.0.md |
+| DLMS-2026-0114 | 0.1.0 | Agent Instruction File Template | template | corpus/templates/DLMS-2026-0114-v0.1.0.md |
+| DLMS-2026-0115 | 0.1.0 | DoD Template — Agent Creation Stage | template | corpus/dod-templates/DLMS-2026-0115-v0.1.0.md |
+| DLMS-2026-0116 | 0.1.0 | Tier 15B Agent Onboarding Guide | procedure | corpus/guides/DLMS-2026-0116-v0.1.0.md |
+| DLMS-2026-0117 | 0.1.0 | Agent Creation Operating SOP | procedure | corpus/guides/DLMS-2026-0117-v0.1.0.md |

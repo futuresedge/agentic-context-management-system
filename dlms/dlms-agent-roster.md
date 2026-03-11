@@ -400,3 +400,82 @@ The removal of the 8-agent dual-version stage and the addition of 17 new agents 
 
 
 ---
+
+## Change 4 — Nexus Infrastructure (Tier 15) and Agent Creation Team (Tier 15B)
+
+Two new tiers added to make the DLMS self-building: Tier 15 provides the runtime MCP server infrastructure that all agents depend on, and Tier 15B governs the creation and retirement of every agent in the system.
+
+### Tier 15 — Nexus Infrastructure *(14 agents)*
+
+The Nexus MCP server is the runtime gateway for all agent tool calls. Tier 15 agents build, maintain, and verify the Nexus server and its governing documentation. They do not participate in document lifecycle stages; they are responsible for the infrastructure on which all other tiers run.
+
+| Agent | Role ID | Responsibility |
+|---|---|---|
+| Infra Planner | `infra-planner` | Plans Nexus build phases; authors phase plans; escalates blockers |
+| Infra Executor | `infra-executor` | Implements TypeScript code per approved phase plans |
+| Infra Code Reviewer | `infra-code-reviewer` | Reviews code against security, correctness, and DLMS constraints |
+| Infra Architecture Reviewer | `infra-architecture-reviewer` | Reviews architectural decisions; validates against DLMS design principles |
+| Infra Specification Verifier | `infra-specification-verifier` | Verifies implemented code against approved specifications |
+| Infra DoD Agent | `infra-dod-agent` | Evaluates stage DoD gates; issues attestations before pipeline advances |
+| Infra DoD Author (Completeness) | `infra-dod-author-completeness` | Authors DoD templates with completeness lens |
+| Infra DoD Author (Correctness) | `infra-dod-author-correctness` | Authors DoD templates with correctness lens |
+| Infra DoD Author (Efficiency) | `infra-dod-author-efficiency` | Authors DoD templates with efficiency lens |
+| Infra DoD Author (Adversarial) | `infra-dod-author-adversarial` | Authors DoD templates with adversarial/security lens |
+| Infra Context Curator | `infra-context-curator` | Curates and packages context for Nexus agents; enforces Named-Resource Rule |
+| Infra Knowledge Curator | `infra-knowledge-curator` | Accumulates learnings from Nexus build phases; manages knowledge base |
+| Infra Metrics Agent | `infra-metrics-agent` | Captures Nexus build metrics; feeds CI monitoring |
+| Infra CI/CD Agent | `infra-cicd-agent` | Manages continuous integration and deployment pipeline for Nexus server |
+
+Governing documents: DLMS-2026-0104 (Nexus Infrastructure Deployment Procedure), DLMS-2026-0016 (Agent Context Boundary Policy).  
+Instruction files: `.github/agents/infra-{role}.agent.md`  
+Shared skills: `.github/skills/nexus-phase-patterns/SKILL.md`, `.github/skills/nexus-code-review/SKILL.md`, `.github/skills/nexus-arch-review/SKILL.md`
+
+### Tier 15B — Agent Creation Team *(9 agents)*
+
+The Agent Creation team governs the full lifecycle of every DLMS agent: request intake, problem analysis, specification authorship, specification review, instruction authoring, verification, registry update, and retirement. No agent may be added to or removed from the active roster without passing the complete 7-stage pipeline governed by DLMS-2026-0108.
+
+| Agent | Role ID | Stage | Independence Constraint |
+|---|---|---|---|
+| Agent Creation Orchestrator | `agent-creation-orchestrator` | Routing (all stages) | N/A — does not write pipeline artefacts |
+| Agent Request Handler | `agent-request-handler` | STEP_01 — Request | None |
+| Agent Problem Analyst | `agent-problem-analyst` | STEP_02 — Problem Analysis | None |
+| Agent Specification Author | `agent-specification-author` | STEP_03 — Specification | Must not hold agentcreation.submitReview |
+| Agent Specification Reviewer | `agent-specification-reviewer` | STEP_04 — Spec Review | reviewer_actor_id ≠ author_actor_id (DLMS-2026-0108 R05) |
+| Agent Instruction Author | `agent-instruction-author` | STEP_05 — Instruction File | Must not hold agentcreation.submitVerification |
+| Agent Specification Verifier | `agent-specification-verifier` | STEP_06 — Verification | verifier_actor_id ≠ instruction author_actor_id (DLMS-2026-0108 R07) |
+| Agent Registry Updater | `agent-registry-updater` | STEP_07 — Registry | None |
+| Agent Retirement Coordinator | `agent-retirement-coordinator` | STEP_R01 — Retirement | None |
+
+**Pipeline artefact storage:** All 7 pipeline artefact types are stored as `agent_artefact` entities in TypeDB (not filesystem files), accessed via `agentcreation.getArtefact` and `agentcreation.writeRequest|writeProblemAnalysis|writeSpec|submitReview|writeInstruction|submitVerification|writeRetirement`. The exception is the instruction deployment file (`.github/agents/{role_id}.agent.md`) which is a real filesystem artefact; the `agent-instruction-record` TypeDB entity records its path and token count.
+
+**Human approval gate:** The only non-automated step in the pipeline is STEP_APPROVE (between STEP_01 and STEP_02) — sysadmin:dlm-sysadmin must set `approval_artefact_id` in the request record. No automation may substitute for this gate.
+
+Governing documents: DLMS-2026-0108 (Agent Creation Process Policy), DLMS-2026-0110 (Agent Retirement Policy), DLMS-2026-0111 (Agent Specification Standard), DLMS-2026-0112 (Agent Request Template), DLMS-2026-0113 (Agent Specification Template), DLMS-2026-0114 (Agent Instruction File Template), DLMS-2026-0115 (DoD — Agent Creation Stage), DLMS-2026-0116 (Tier 15B Onboarding Guide), DLMS-2026-0117 (Agent Creation Operating SOP).  
+Instruction files: `.github/agents/{role_id}.agent.md`  
+Shared skills: `.github/skills/agent-creation-patterns/SKILL.md`, `.github/skills/instruction-file-authoring/SKILL.md`, `.github/skills/spec-verification-criteria/SKILL.md`
+
+### Updated Architecture Overview
+
+| Tier | Agents | Change |
+|---|---|---|
+| System Orchestrator | 1 | Unchanged |
+| Governance Layer | 12 | Unchanged |
+| Stage Orchestrators | 6 | ▼ Removed Dual-Version Orchestrator |
+| Creation Stage | 7 | Unchanged |
+| Review & Approval Stage | 11 | Unchanged |
+| ~~Dual-Version Production~~ | ~~8~~ | ✕ Removed entirely |
+| Indexing & Classification | 12 | Unchanged |
+| Storage & Versioning | 7 | Unchanged |
+| Distribution Stage | 7 | Unchanged |
+| Archival Stage | 7 | Unchanged |
+| Context Delivery Layer | 8 | Unchanged |
+| Continuous Improvement | 10 | Added in Change 2 |
+| DLM SysAdmin & Governance | 7 | Added in Change 3 |
+| Cross-Cutting Services | 3 | Unchanged |
+| **Tier 15 — Nexus Infrastructure** | **14** | ✦ New (Change 4) |
+| **Tier 15B — Agent Creation Team** | **9** | ✦ New (Change 4) |
+| **Total** | **121** | Net +23 from Change 3 |
+
+The addition of Tier 15 (14 Nexus Infrastructure agents) and Tier 15B (9 Agent Creation agents) brings the total to **121 agents**. The system is now fully self-building: Tier 15 constructs and maintains the MCP runtime; Tier 15B governs the creation and retirement of every agent class in the system, including itself.
+
+---

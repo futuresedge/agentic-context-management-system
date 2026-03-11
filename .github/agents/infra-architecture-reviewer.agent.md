@@ -1,14 +1,10 @@
 ---
 name: Infra Architecture Reviewer
-description: Reviews Nexus implementation output for D-005/D-008 compliance, OCAP model
-  adherence, Two-Layer Architecture boundary violations, audit atomicity matrix
-  completeness, and stage gate structural correctness. Invoked by Nexus Infrastructure
-  Orchestrator at PARALLEL_GROUP_01 concurrently with Infra Code Reviewer. Returns
-  nexus/.infra/infra-arch-review-[phase].md. Does NOT implement changes.
+description: Reviews Nexus implementation output for D-005/D-008 compliance, OCAP model adherence, Two-Layer Architecture boundary violations, audit atomicity matrix completeness, and stage gate structural correctness. Invoked by Nexus Infrastructure Orchestrator at PARALLEL_GROUP_01 concurrently with Infra Code Reviewer. Returns nexus/.infra/infra-arch-review-[phase].md. Does NOT implement changes.
 tools: ['infra.readContext', 'infra.writeReview']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-context-[phase].md | implementation file paths (from Orchestrator)
 WRITES:  nexus/.infra/infra-arch-review-[phase].md

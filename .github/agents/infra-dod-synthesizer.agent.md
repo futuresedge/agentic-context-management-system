@@ -4,7 +4,7 @@ description: Synthesizes all parallel DoD draft artefacts into the canonical inf
 tools: ['infra.readContext', 'infra.synthesizeDoD']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-dod-draft-completeness-[phase].md |
          nexus/.infra/infra-dod-draft-adversarial-[phase].md |

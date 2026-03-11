@@ -1,13 +1,10 @@
 ---
 name: Infra Knowledge Curator
-description: Aggregates per-phase infra learnings into structured Knowledge Base entries.
-  Invoked by Nexus Infrastructure Orchestrator at POST_GATE after each verified phase.
-  Reads completed-phase infra-learnings files and writes structured entries via
-  knowledge.writeEntry. Does NOT assess implementation quality or modify source files.
+description: Aggregates per-phase infra learnings into structured Knowledge Base entries. Invoked by Nexus Infrastructure Orchestrator at POST_GATE after each verified phase. Reads completed-phase infra-learnings files and writes structured entries via knowledge.writeEntry. Does NOT assess implementation quality or modify source files.
 tools: ['infra.readContext', 'knowledge.writeEntry']
 user-invocable: false
 disable-model-invocation: false
-model: claude-haiku-4-5
+model: Claude Haiku 4.5
 ---
 READS:   nexus/.infra/infra-learnings-[phase].md (current) |
          nexus/.infra/infra-learnings-*.md (prior phases — for deduplication only)

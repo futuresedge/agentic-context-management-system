@@ -1,7 +1,7 @@
 # DLMS TypeDB Schema — Phase 1.1
 # Target: TypeDB 3.x
 # ONE Ontology dimensions:
-#   Things      → document, stage_artefact
+#   Things      → document, stage_artefact, agent_artefact
 #   People      → agent_class, agent_instance
 #   Groups      → group (dlms-internal default; multi-tenancy dormant)
 #   Connections → dependency relation, supersession relation
@@ -95,6 +95,52 @@ define
   tool_list_json value string;
   # JSON array of MCP tool names this agent class is permitted to call.
   # Runtime cross-referenced against the Tool Access Registry.
+
+  # --- People: agent_class lifecycle attributes (Wave 15 / Tier 15B extension) ---
+  # All optional for backward compatibility with existing seed data.
+  # Prefixed with agent_ to avoid collision with document entity attributes
+  # (e.g. agent_status vs status, agent_created_at vs created_at).
+
+  tier_label value string;
+  # Human-readable tier label. e.g. "15B", "13", "1"
+  # Distinct from tier (integer) — allows non-integer labels (e.g. "15B").
+
+  agent_status value string;
+  # enum: proposed | approved | active | retired
+  # Lifecycle status of this agent class in the DLMS roster.
+  # Validated against controlled vocabulary at tool handler layer (NOT document.status).
+
+  agent_description value string;
+  # Single-sentence description of the agent's function and invocation condition.
+  # Matches the description field in the .agent.md frontmatter.
+
+  spec_doc_id value string;
+  # doc_id of the agent specification corpus document (DLMS-2026-NNNN) that
+  # governs this agent class. Populated by agent-registry-updater at registration.
+
+  instruction_path value string;
+  # Filesystem path to the .agent.md instruction file.
+  # Convention: .github/agents/{role_id}.agent.md
+  # For retired agents: .github/agents/retired/{role_id}.agent.md (DLMS-2026-0110 R07).
+  # Distinct from document.agent_path which refers to corpus document paths.
+
+  agent_created_at value datetime;
+  # Timestamp when this agent class was registered via agentcreation.updateRegistry.
+  # Distinct from document.created_at (which tracks corpus document authorship).
+
+  agent_created_by value string;
+  # actor_id of the agent-registry-updater that registered this agent class.
+  # Format: agentcreation:agent-registry-updater
+
+  agent_retired_at value datetime;
+  # Timestamp when this agent class was retired via roster.retire.
+  # Null until retired. Non-null is a terminal condition (DLMS-2026-0110 R05).
+
+  agent_retired_by value string;
+  # actor_id of the agent-retirement-coordinator that retired this agent class.
+  # Format: agentcreation:agent-retirement-coordinator
+
+  # --- People: agent_instance ---
 
   instance_id value string;
   # Unique per agent instance (UUID).
@@ -209,13 +255,50 @@ define
                  owns created_by,
                  owns created_at;
 
+  # --- Things: agent_artefact ---
+  # An artefact produced by the Tier 15B agent creation/retirement pipeline.
+  # Kept separate from stage_artefact because the target identifier is role_id
+  # (an agent class), not doc_id (a corpus document). Mixing the two populations
+  # would break stage gate queries, index counts, and artefact_type semantics.
+  #
+  # Controlled artefact_type vocabulary (enforced at handler layer via zod):
+  #   agent-request-record     — intake record capturing the creation/retirement request
+  #   agent-problem-analysis   — evidence base, capability gap, tier fit, dependency risk
+  #   agent-spec               — full specification (8 sections per DLMS-2026-0113)
+  #   agent-spec-review        — independent review of the spec (DLMS-2026-0108 R05)
+  #   agent-instruction-record — deployment record: instruction_path + token count
+  #   agent-verification-record — independent verification result (DLMS-2026-0108 R07)
+  #   agent-retirement-record  — retirement record: tier, approvals, dependents resolved
+  #
+  # content field: serialised JSON payload. Schema per artefact_type is defined in
+  #   .github/skills/agent-creation-patterns/SKILL.md § ARTEFACT_CONTENT_SCHEMAS.
+  # Append-only: enforced at application layer (same constraint as audit_event).
+
+  agent_artefact owns artefact_id @key,
+                 owns role_id,
+                 owns artefact_type,
+                 owns content,
+                 owns created_by,
+                 owns created_at;
+
   # --- People: agent_class ---
   # Represents an agent role (e.g. document-author, review-verifier).
   # One entity per role in the agent roster. Seeded from dlms-agent-roster.md.
+  # The 9 lifecycle attributes below (tier_label through agent_retired_by) are optional
+  # for backward compatibility — existing seed data omits them without error.
 
   agent_class owns role_id @key,
               owns tier,
-              owns tool_list_json;
+              owns tool_list_json,
+              owns tier_label,
+              owns agent_status,
+              owns agent_description,
+              owns spec_doc_id,
+              owns instruction_path,
+              owns agent_created_at,
+              owns agent_created_by,
+              owns agent_retired_at,
+              owns agent_retired_by;
 
   # --- People: agent_instance ---
   # Represents a specific activation of an agent class.

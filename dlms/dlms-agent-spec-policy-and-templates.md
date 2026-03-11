@@ -1,5 +1,12 @@
 # DLMS Agent Specification Policy & Templates
 
+> **SUPERSEDED — 2026-03-10**
+> Part 1 (Agent Creation Policy) has been formalised as **DLMS-2026-0108** (`dlms/corpus/policies/DLMS-2026-0108-v0.1.0.md`).
+> Parts 2 and 3 (Orchestrator and Subagent templates) will be formalised as **DLMS-2026-0113** (Agent Specification Template) and **DLMS-2026-0114** (Agent Instruction File Template) in Wave 15.
+> This document is retained as a working reference only. Governance authority rests with the corpus documents above.
+
+---
+
 Below are three deliverables: the governance policy (DLMS-format), an Orchestrator Agent template, a Subagent template, and recommended additional templates with rationale.
 
 ***

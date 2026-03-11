@@ -1,9 +1,9 @@
 # Tool Access Registry
 
 **Registry ID:** TAR-001  
-**Version:** 0.3.1  
+**Version:** 0.5.0  
 **Status:** draft  
-**Last updated:** 2026-03-10  
+**Last updated:** 2026-03-11  
 **Governed by:** platform-constraints.md (OCAP model)  
 **Consumed by:** `nexus/src/tools/shared/gateway.ts` (loaded into memory at server start)
 
@@ -175,7 +175,7 @@ The MCP Gateway validates every incoming tool call against this registry before 
 | `sysadmin.readGovernanceDoc` | `dlm-sysadmin-agent`, `policy-manager`, `sla-manager`, `guide-curator`, `rules-patterns-agent`, `dod-custodian`, `sysadmin-activity-monitor` | R | SysAdmin tier only. Triggers `governance_doc_read` event. |
 | `sysadmin.readAuditEvents` | `dlm-sysadmin-agent`, `sysadmin-activity-monitor`, `infra-metrics-agent` | R | Time-windowed audit query. Filter by `actor_id`, `event_type`, or `target_id`. No writes. `infra-metrics-agent` restricted to Tier 15 event types by phase_id filter. |
 | `sysadmin.readSysAdminBriefing` | `dlm-sysadmin-agent` | R | Reads briefing artefact from TypeDB. No writes. |
-| `sysadmin.writeGovernanceDoc` | `policy-manager`, `sla-manager`, `guide-curator` | W | Updates document entity in TypeDB; triggers render-back to .md file. Triggers `governance_doc_updated` event. NOT available to `dlm-sysadmin-agent` (reads only). |
+| `sysadmin.writeGovernanceDoc` | `policy-manager`, `sla-manager`, `guide-curator`, `agent-registry-updater` | W | Updates document entity in TypeDB; triggers render-back to .md file. Triggers `governance_doc_updated` event. NOT available to `dlm-sysadmin-agent` (reads only). `agent-registry-updater` scope is restricted to dlms-agent-roster.md only. |
 | `sysadmin.writeChangeDirective` | `dlm-sysadmin-agent` | W | Requires `sysadmin-briefing` artefact to exist as source. |
 | `sysadmin.updateConfig` | `configuration-controller` | W | Gate: `change-directive` artefact for `changeDirectiveId` must exist. Triggers `config_updated` event. |
 
@@ -199,6 +199,28 @@ must have zero overlap with the Infra Verifier's tools (DLMS-2026-0104 R04).
 | `infra.writeReview` | `infra-code-reviewer`, `infra-architecture-reviewer` | W | One review artefact per reviewer per phase_id. Reviewer type (`code` or `architecture`) recorded in artefact. Triggers `infra_review_submitted` event. |
 | `infra.submitVerification` | `infra-verifier` | W | Gate: `infra-code-review-[phase]` AND `infra-arch-review-[phase]` artefacts must exist. Checks all infra_dod criteria. Writes `infra-verification-[phase]` and `infra-learnings-[phase]`. Triggers `infra_verified` or `infra_verification_failed` event. Must NOT be held by `infra-executor`. |
 | `infra.writeMetrics` | `infra-metrics-agent` | W | Stage metrics artefact only. Reads from `sysadmin.readAuditEvents` (filtered by phase_id). Triggers `artefact_created` event. |
+
+---
+
+## Agent Creation & Lifecycle — Tier 15B
+
+Tier 15B has structural write isolation: each `agentcreation.*` write tool is permitted to exactly one agent role, enforcing the independence requirements of DLMS-2026-0108 (R05, R07) and DLMS-2026-0111 (NR09). No agent holds both a write tool and the corresponding verification tool for the same artefact type. The 9 named roles for `roster.get` and `roster.list` are defined explicitly — these tools are not available to all registered agents.
+
+| tool_name | permitted_agent_roles | r/w | scope_constraint |
+|---|---|---|---|
+| `agentcreation.getArtefact` | `agent-creation-orchestrator`, `agent-request-handler`, `agent-problem-analyst`, `agent-specification-author`, `agent-specification-reviewer`, `agent-instruction-author`, `agent-specification-verifier`, `agent-registry-updater`, `agent-retirement-coordinator` | R | Two query modes: (1) supply `role_id` + `artefact_type` → returns most-recently-created matching `agent_artefact` entity; (2) supply `artefact_id` → returns specific entity by key. Returns full `content` JSON payload. No writes. No audit event on read. `artefact_type` must be from controlled vocabulary in schema.tql § agent_artefact. |
+| `agentcreation.writeRequest` | `agent-request-handler` | W | Writes `agent_artefact` entity with `artefact_type: agent-request-record` conforming to DLMS-2026-0112 content schema. Validates proposed_role_id uniqueness against all active and retired `agent_class` entities before writing. Triggers `agent_request_received` event. |
+| `agentcreation.writeProblemAnalysis` | `agent-problem-analyst` | W | Writes `agent_artefact` entity with `artefact_type: agent-problem-analysis`. Gate: `agent-request-record` for this `role_id` must exist in TypeDB with `approval_artefact_id` non-null (assertAgentArtefactExists). Triggers `artefact_created` event. |
+| `agentcreation.writeSpec` | `agent-specification-author` | W | Writes `agent_artefact` entity with `artefact_type: agent-spec` conforming to DLMS-2026-0113 content schema. Gate: `agent-problem-analysis` for this `role_id` must exist in TypeDB (assertAgentArtefactExists). Triggers `agent_spec_created` event. |
+| `agentcreation.submitReview` | `agent-specification-reviewer` | W | Writes `agent_artefact` entity with `artefact_type: agent-spec-review`. Gate: `agent-spec` for this `role_id` must exist in TypeDB. `reviewer_actor_id` in content must differ from `author_actor_id` in the referenced `agent-spec` (independence check, DLMS-2026-0108 R05). Triggers `artefact_created` event. |
+| `agentcreation.writeInstruction` | `agent-instruction-author` | W | Writes `agent_artefact` entity with `artefact_type: agent-instruction-record`. Gate: `agent-spec-review` for this `role_id` must exist with `result: PASS` in content (assertAgentArtefactExists with requiredContent). Enforces `body_token_count ≤ 440` in content at write time. Triggers `agent_instruction_created` event. |
+| `agentcreation.submitVerification` | `agent-specification-verifier` | W | Writes `agent_artefact` entity with `artefact_type: agent-verification-record`. Gate: `agent-instruction-record` for this `role_id` must exist in TypeDB. `verifier_actor_id` in content must differ from `author_actor_id` in the referenced `agent-instruction-record` (DLMS-2026-0108 R07). Triggers `agent_spec_verified` event. |
+| `agentcreation.updateRegistry` | `agent-registry-updater` | W | Atomic transaction: writes `agent_class` entity to TypeDB + updates tool-access-registry entries + updates dlms-agent-roster.md. Gate: `agent-verification-record` for this `role_id` must exist with `result: PASS` in content (assertAgentArtefactExists with requiredContent). Triggers `agent_deployed` event. Calls `roster.write` internally. |
+| `agentcreation.writeRetirement` | `agent-retirement-coordinator` | W | Writes `agent_artefact` entity with `artefact_type: agent-retirement-record`. Gate: for tier ≤ 14, `sysadmin_approval_artefact_id` must be non-null in the `agent-request-record` (DLMS-2026-0110 R01). Triggers `agent_retired` event. Calls `roster.retire` internally. |
+| `roster.get` | `agent-creation-orchestrator`, `agent-request-handler`, `agent-problem-analyst`, `agent-specification-author`, `agent-registry-updater`, `agent-retirement-coordinator`, `dlm-sysadmin`, `agent-behaviour-analyst`, `system-orchestrator` | R | Returns single agent_class entity by role_id. Returns all attributes including agent_status, instruction_path, and spec_doc_id. No writes. No audit event on read. |
+| `roster.list` | `agent-creation-orchestrator`, `agent-request-handler`, `agent-problem-analyst`, `agent-specification-author`, `agent-registry-updater`, `agent-retirement-coordinator`, `dlm-sysadmin`, `agent-behaviour-analyst`, `system-orchestrator` | R | Returns array of agent_class entities. Filter by tier, tier_label, or agent_status. No writes. No audit event on read. |
+| `roster.write` | `agent-registry-updater` | W | Writes or updates agent_class entity in TypeDB. Gate: agentcreation.updateRegistry workflow context must exist for this role_id (prevents direct roster manipulation outside the creation workflow). Atomic with `agent_deployed` audit event. |
+| `roster.retire` | `agent-retirement-coordinator` | W | Sets agent_class agent_status to retired; populates agent_retired_at and agent_retired_by. Gate: retirement artefact for this role_id must exist. For tier ≤ 14: sysadmin_approval_artefact_id must be non-null (DLMS-2026-0110 R01). Atomic with `agent_retired` audit event. |
 
 ---
 
@@ -236,6 +258,8 @@ These tools are exposed on the nexus-external server only. They are not availabl
 
 | Version | Date | Author | Note |
 |---|---|---|---|
+| 0.5.0 | 2026-03-11 | bootstrap:design-team | Added `agentcreation.getArtefact` R tool (all 9 Tier 15B roles); updated all 8 `agentcreation.*` scope constraints to reference `agent_artefact` TypeDB entity (not `stage_artefact`, not files); gate language updated to use `assertAgentArtefactExists` with `requiredContent` where applicable |
+| 0.4.0 | 2026-03-11 | bootstrap:design-team | Added Tier 15B section: 8 agentcreation.* write tools (one role each) + roster.get + roster.list (9 named roles each) + roster.write + roster.retire = 12 new tools; added `agent-registry-updater` to `sysadmin.writeGovernanceDoc` permitted roles (dlms-agent-roster.md scope only) |
 | 0.3.1 | 2026-03-10 | agent:infra-executor | Added `infra-context-curator` to `knowledge.readEntry` permitted roles; added `infra-verifier` and `infra-knowledge-curator` to `knowledge.writeEntry` permitted roles; updated scope constraints; found during Phase D validation (infra_work_item: phase-0) |
 | 0.3.0 | 2026-03-10 | bootstrap:design-team | Added `infra.writeDraftDoD` and `infra.synthesizeDoD` tools for multi-perspective DoD pipeline; extended `infra.readContext` and `dod.getTemplate` permitted roles; updated `infra.writeDoD` scope constraint; per DLMS-2026-0107 |
 | 0.2.0 | 2026-03-10 | bootstrap:design-team | Added Tier 15 tool section (10 tools); added `infra-metrics-agent` to `sysadmin.readAuditEvents` permitted roles |

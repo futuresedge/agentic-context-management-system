@@ -1,12 +1,10 @@
 ---
 name: Infra Planner
-description: Produces the implementation plan for a Nexus infrastructure phase.
-  Invoked by Nexus Infrastructure Orchestrator at STEP_02. Returns
-  nexus/.infra/infra-plan-[phase].md. Does NOT execute or verify the plan.
+description: Produces the implementation plan for a Nexus infrastructure phase. Invoked by Nexus Infrastructure Orchestrator at STEP_02. Returns nexus/.infra/infra-plan-[phase].md. Does NOT execute or verify the plan.
 tools: ['infra.readContext', 'infra.writePlan']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-context-[phase].md
 WRITES:  nexus/.infra/infra-plan-[phase].md

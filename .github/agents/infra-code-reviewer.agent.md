@@ -1,14 +1,10 @@
 ---
 name: Infra Code Reviewer
-description: Reviews Nexus implementation output for TypeQL injection, shared-transaction
-  atomicity, MCP handler contract compliance, event type slug correctness, and OWASP
-  issues. Invoked by Nexus Infrastructure Orchestrator at PARALLEL_GROUP_01 concurrently
-  with Infra Architecture Reviewer. Returns nexus/.infra/infra-code-review-[phase].md.
-  Does NOT implement changes.
+description: Reviews Nexus implementation output for TypeQL injection, shared-transaction atomicity, MCP handler contract compliance, event type slug correctness, and OWASP issues. Invoked by Nexus Infrastructure Orchestrator at PARALLEL_GROUP_01 concurrently with Infra Architecture Reviewer. Returns nexus/.infra/infra-code-review-[phase].md. Does NOT implement changes.
 tools: ['infra.readContext', 'infra.writeReview']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-context-[phase].md | implementation file paths (from Orchestrator)
 WRITES:  nexus/.infra/infra-code-review-[phase].md

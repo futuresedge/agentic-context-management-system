@@ -1,12 +1,10 @@
 ---
 name: Infra Context Curator
-description: Assembles the minimal scoped context package for a Nexus infrastructure
-  phase. Invoked by Nexus Infrastructure Orchestrator at STEP_01. Returns
-  nexus/.infra/infra-context-[phase].md. Does NOT plan or execute infra work.
+description: Assembles the minimal scoped context package for a Nexus infrastructure phase. Invoked by Nexus Infrastructure Orchestrator at STEP_01. Returns nexus/.infra/infra-context-[phase].md. Does NOT plan or execute infra work.
 tools: ['infra.readContext', 'knowledge.readEntry', 'infra.writeContext']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   dlms/nexus-roadmap.md | dlms/registry/tool-access-registry.md |
          dlms/registry/event-type-registry.md | nexus/.infra/nexus-phase-manifest.md

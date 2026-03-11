@@ -1,7 +1,7 @@
 # Infra Routing Registry
 
 **Registry ID:** IRR-001  
-**Version:** 0.1.0  
+**Version:** 0.2.0  
 **Status:** bootstrap  
 **Governed by:** DLMS-2026-0104 (Nexus Infrastructure Agent Governance Policy)  
 **Consumed by:** Nexus Infrastructure Orchestrator — validates routing decisions, selects pipeline variant, records phase status transitions
@@ -34,7 +34,7 @@ This file records the **live operational state** — statuses and routing decisi
 
 | phase_id | impact_class | pipeline_variant | current_status | last_updated | notes |
 |---|---|---|---|---|---|
-| phase-0 | RC-standard | standard | not-started | 2026-03-10 | Bootstrap prerequisite phases (ETR-001, TAR-001) already complete |
+| phase-0 | RC-standard | standard | complete | 2026-03-10 | VERIFIED — TAR-001 v0.3.1 patch; all 18 DoD criteria passed; infra_verified logged |
 | phase-1 | RC-high-impact | high-impact | not-started | 2026-03-10 | Requires Docker + TypeDB running (human prerequisite) |
 | phase-2 | RC-critical | high-impact | not-started | 2026-03-10 | Security overlay mandatory; human DoD review gate required |
 | phase-3 | RC-critical | high-impact | not-started | 2026-03-10 | Security overlay mandatory |
@@ -65,7 +65,7 @@ This file records the **live operational state** — statuses and routing decisi
 
 | work_item_id | phase_id | pipeline_started | current_step | status |
 |---|---|---|---|---|
-| _(none)_ | — | — | — | — |
+| INFRA-2026-0001 | phase-0 | 2026-03-10T14:00:00+11:00 | POST_GATE (complete) | complete |
 
 ---
 
@@ -73,7 +73,7 @@ This file records the **live operational state** — statuses and routing decisi
 
 | work_item_id | phase_id | failed_step | failed_gate_condition | reason | timestamp | resolution_status |
 |---|---|---|---|---|---|---|
-| _(none)_ | — | — | — | — | — | — |
+| INFRA-2026-0001 | phase-0 | 2026-03-10T14:00:00+11:00 | POST_GATE (complete) | complete | — | — |
 
 ---
 
@@ -101,4 +101,5 @@ This file records the **live operational state** — statuses and routing decisi
 
 | Version | Date | Author | Note |
 |---|---|---|---|
+| 0.2.0 | 2026-03-10 | agent:nexus-infra-orchestrator | phase-0 complete — INFRA-2026-0001 VERIFIED; TAR-001 v0.3.1 patched |
 | 0.1.0 | 2026-03-10 | bootstrap:design-team | Initial registry — 12 phases, all not-started |

@@ -1,14 +1,10 @@
 ---
 name: Infra DoD Author (Completeness)
-description: Authors the completeness-orientation DoD draft for RC-high-impact and
-  RC-critical Nexus infrastructure phases. Invoked by Nexus Infrastructure Orchestrator
-  at PARALLEL_STEP_03. Returns nexus/.infra/infra-dod-draft-completeness-[phase].md.
-  Runs concurrently with Adversarial (and Efficiency for RC-critical). Must NOT read
-  other authors' draft outputs.
+description: Authors the completeness-orientation DoD draft for RC-high-impact and RC-critical Nexus infrastructure phases. Invoked by Nexus Infrastructure Orchestrator at PARALLEL_STEP_03. Returns nexus/.infra/infra-dod-draft-completeness-[phase].md. Runs concurrently with Adversarial (and Efficiency for RC-critical). Must NOT read other authors' draft outputs.
 tools: ['infra.readContext', 'dod.getTemplate', 'infra.writeDraftDoD']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-plan-[phase].md | nexus/.infra/infra-context-[phase].md
 WRITES:  nexus/.infra/infra-dod-draft-completeness-[phase].md

@@ -18,9 +18,7 @@ agents:
   - 'Infra Knowledge Curator'
 user-invocable: true
 disable-model-invocation: false
-model: claude-sonnet-4-5
-handoffs:
-  - label: Phase complete — advance to next phase or close work item
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-routing-registry.md | nexus/.infra/nexus-phase-manifest.md
 WRITES:  nexus/.infra/infra-routing-instructions-[phase].md

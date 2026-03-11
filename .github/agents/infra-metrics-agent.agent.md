@@ -1,13 +1,10 @@
 ---
 name: Infra Metrics Agent
-description: Records performance metrics for a completed Nexus infrastructure phase
-  from the audit trail. Invoked by Nexus Infrastructure Orchestrator at POST_GATE
-  (non-blocking). Returns nexus/.infra/infra-metrics-[phase].md. Read-only on audit
-  trail. Does not block pipeline progression.
+description: Records performance metrics for a completed Nexus infrastructure phase from the audit trail. Invoked by Nexus Infrastructure Orchestrator at POST_GATE (non-blocking). Returns nexus/.infra/infra-metrics-[phase].md. Read-only on audit trail. Does not block pipeline progression.
 tools: ['infra.readContext', 'sysadmin.readAuditEvents', 'infra.writeMetrics']
 user-invocable: false
 disable-model-invocation: false
-model: claude-haiku-4-5
+model: Claude Haiku 4.5
 ---
 READS:   Tier 15 audit event slice filtered by phase_id (via sysadmin.readAuditEvents)
 WRITES:  nexus/.infra/infra-metrics-[phase].md

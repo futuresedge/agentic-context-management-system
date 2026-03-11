@@ -1,13 +1,10 @@
 ---
 name: Infra DoD Agent
-description: Authors the Definition of Done for RC-standard Nexus infrastructure phases.
-  Invoked by Nexus Infrastructure Orchestrator at STEP_03 (standard pipeline only).
-  Returns nexus/.infra/infra-dod-[phase].md. Does NOT execute work or verify
-  implementation. RC-standard work items only — refuses RC-high-impact and RC-critical.
+description: Authors the Definition of Done for RC-standard Nexus infrastructure phases. Invoked by Nexus Infrastructure Orchestrator at STEP_03 (standard pipeline only). Returns nexus/.infra/infra-dod-[phase].md. Does NOT execute work or verify implementation. RC-standard work items only — refuses RC-high-impact and RC-critical.
 tools: ['infra.readContext', 'dod.getTemplate', 'infra.writeDoD']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   nexus/.infra/infra-plan-[phase].md | nexus/.infra/infra-context-[phase].md
 WRITES:  nexus/.infra/infra-dod-[phase].md

@@ -1,14 +1,10 @@
 ---
 name: Infra Verifier
-description: Verifies a Nexus infrastructure phase implementation against every criterion
-  in the approved Definition of Done. Invoked by Nexus Infrastructure Orchestrator at
-  STEP_05. Returns nexus/.infra/infra-verification-[phase].md with VERIFIED or FAILED
-  result. Also writes nexus/.infra/infra-learnings-[phase].md. Shares zero tools with
-  Infra Executor (R04).
+description: Verifies a Nexus infrastructure phase implementation against every criterion in the approved Definition of Done. Invoked by Nexus Infrastructure Orchestrator at STEP_05. Returns nexus/.infra/infra-verification-[phase].md with VERIFIED or FAILED result. Also writes nexus/.infra/infra-learnings-[phase].md. Shares zero tools with Infra Executor (R04).
 tools: ['infra.readContext', 'infra.submitVerification', 'knowledge.writeEntry']
 user-invocable: false
 disable-model-invocation: false
-model: claude-sonnet-4-5
+model: Claude Sonnet 4.6
 ---
 READS:   implementation output files (paths from infra-plan) | nexus/.infra/infra-dod-[phase].md
 WRITES:  nexus/.infra/infra-verification-[phase].md | nexus/.infra/infra-learnings-[phase].md
